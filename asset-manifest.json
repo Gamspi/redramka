@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redramka/static/css/main.2aca92de.css",
+    "main.js": "/redramka/static/js/main.2c907b3b.js",
+    "index.html": "/redramka/index.html",
+    "main.2aca92de.css.map": "/redramka/static/css/main.2aca92de.css.map",
+    "main.2c907b3b.js.map": "/redramka/static/js/main.2c907b3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2aca92de.css",
+    "static/js/main.2c907b3b.js"
+  ]
+}
