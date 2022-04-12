@@ -1,0 +1,57 @@
+.cards-list {
+  overflow: hidden;
+  min-height: 100%;
+  transition: all 500ms;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+
+
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background: #ffa5a5;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.item {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 10px;
+  list-style-type: none;
+
+  &-enter {
+    transform: translateX(1200px);
+  }
+
+  &-enter-active {
+
+    transform: translateX(0);
+    transition: all 500ms;
+  }
+
+  &-exit {
+    opacity: 1;
+    //max-width: 100%;
+
+  }
+
+
+  &-exit-active {
+    //max-width: 0;
+    opacity: 0;
+    transition: all 500ms;
+
+  }
+}

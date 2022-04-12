@@ -1,0 +1,25 @@
+.Core{
+    min-height: 100vh;
+    background: #e1f5ff;
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    flex: 1 1 100%;
+}
+
+.header{
+    background: #007cff;
+    color: white;
+    font-size: 34px;
+    padding:10px 0;
+
+}
+.footer{
+    background: #a8cdff;
+}
+.container{
+    padding: 0 10px 0 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
