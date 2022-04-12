@@ -1,9 +1,9 @@
 import React from 'react';
 import "./konfem.scss"
 import {CSSTransition} from "react-transition-group";
-const Konfem = ({setIsKonfem, handel, isKonfem}) => {
+const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
     const handelSetCards = () => {
-        handel()
+        handelDelete()
         setIsKonfem(false)
     }
     return (
