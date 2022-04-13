@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Info.scss"
 import {CSSTransition} from "react-transition-group";
-import useTheme from "../../hooks/useTheme";
 
 const Info = ({
                   country, established,
@@ -11,7 +10,8 @@ const Info = ({
                   slogan,
                   website,
                   isInfo,
-                  setIsKonfem
+                  setIsInfo,
+    setIsKonfem
               }) => {
 
     return (
@@ -31,9 +31,8 @@ const Info = ({
                     <p>Slogan: {slogan}</p>
                     <p>Head quaters: {head_quaters}</p>
                     <p>Website: <a href={website}>{website}</a></p>
-                    <button onClick={()=> {
-                        setIsKonfem(true)
-                    }}>Удалить</button>
+                    <button className="info__button" onClick={()=>setIsKonfem(true)}>Удалить</button>
+                    <button className="info__button-close" onClick={()=>setIsInfo(false)}>X</button>
                 </div>
             </div>
         </CSSTransition>

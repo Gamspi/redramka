@@ -8,6 +8,7 @@ import Konfem from "../konfem/Konfem";
 import Success from "../success/Success";
 import useObserver from "../../hooks/useObserver";
 import useTheme from "../../hooks/useTheme";
+import Info from "../info/Info";
 
 const CardsList = () => {
     const [cards, setCards] = useState([])
@@ -17,11 +18,13 @@ const CardsList = () => {
     const [totalPassengers, setTotalPassengers] = useState(1)
     const [deleteNum, setDeleteNum] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [isInfo, setIsInfo] = useState(false)
+    const [card, setCard] = useState(null)
     const [ref, is] = useObserver()
     const [setTheme] = useTheme()
-    useEffect(()=>{
-    isKonfem? setTheme("true"):setTheme('')
-},[isKonfem])
+    useEffect(() => {
+        (isKonfem ||isInfo ) ? setTheme("true") : setTheme('')
+    }, [isKonfem, isInfo])
 
     async function fetchData() {
         try {
@@ -42,10 +45,13 @@ const CardsList = () => {
             fetchData()
         }
     }, [is])
-
     const handelDelete = () => {
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsSuccess(true)
+        setIsInfo(false)
+        setTimeout(() => {
+            setCard(null)
+        }, 300)
         setTimeout(() => {
             setIsSuccess(false)
         }, 2000)
@@ -59,6 +65,11 @@ const CardsList = () => {
                 setIsKonfem={setIsKonfem}
                 isKonfem={isKonfem}
             />
+            <Info {...card}
+                  isInfo={isInfo}
+                  setIsInfo={setIsInfo}
+                  setIsKonfem={setIsKonfem}
+            />
             <TransitionGroup component='ul'>
                 {
                     cards.map(element => (
@@ -67,11 +78,20 @@ const CardsList = () => {
                                 key={element._id}
                                 classNames="item"
                             >
-                                <li className="item">
+                                <li className="item"
+                                    onClick={(event) => {
+                                        setDeleteNum(element._id)
+                                        if (!event.target.classList.contains("card__button")
+                                        ) {
+                                            setCard(element.airline[0])
+                                            setIsInfo(true)
+
+                                        }
+                                    }}
+                                >
                                     <Card
                                         {...element}
                                         setIsKonfem={setIsKonfem}
-                                        setDeleteNum={setDeleteNum}
                                     />
                                 </li>
                             </CSSTransition>

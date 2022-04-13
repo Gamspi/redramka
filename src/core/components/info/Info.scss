@@ -1,4 +1,4 @@
-.info {
+.info{
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,10 @@
   align-items: center;
   z-index: 50;
 
+
+
   &__body {
+    position: relative;
     min-width: 300px;
     min-height: 200px;
     background: #ffffff;
@@ -18,6 +21,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 30px 2px #007cff;
   }
 
   button {
@@ -27,6 +31,24 @@
     height: 35px;
     margin: 10px;
     align-self: end;
+    background: #ffa5a5;
+    transition: all 200ms linear;
+    border: none;
+    &:hover {
+      box-shadow: 0 0 10px 1px #ff0010 inset;
+    }
+  }
+  .info__button-close {
+    position: absolute;
+    right: -25px  ;
+    top: -25px;
+    width: 35px;
+    box-shadow: 0 0 5px 1px #c80009;
+    transition: all 1100ms;
+    &:hover{
+      box-shadow: 0 0 10px 2px #c80009;
+      font-size: 1.2em;
+    }
   }
 
   &-enter {
