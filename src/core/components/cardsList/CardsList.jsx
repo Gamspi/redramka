@@ -47,7 +47,7 @@ const CardsList = () => {
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsSuccess(true)
         setTimeout(() => {
-            setIsSuccess(true)
+            setIsSuccess(false)
         }, 2000)
     }
     return (
