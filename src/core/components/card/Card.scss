@@ -1,5 +1,5 @@
 .card {
-position: relative;
+  position: relative;
   border: 1px solid #007cff;
   border-radius: 20px;
   min-width: 350px;
@@ -9,6 +9,7 @@ position: relative;
   display: flex;
   align-items: start;
   justify-content: space-between;
+
   button {
     position: absolute;
     right: 20px;
@@ -16,7 +17,14 @@ position: relative;
     background: #ffa5a5;
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+
+
+  }
+  &__info {
+    h2 {
+      margin-bottom: 10px;
+    }
   }
 }

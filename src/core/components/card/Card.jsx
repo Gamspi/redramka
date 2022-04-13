@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react';
 import "./Card.scss"
 import Info from "../imfo/Info";
-import {CSSTransition} from "react-transition-group";
 
 const Card = ({name, trips, airline: [air], setDeleteNum, setIsKonfem, _id: id}) => {
     const [isInfo, setIsInfo] = useState(false)
@@ -16,17 +15,8 @@ const Card = ({name, trips, airline: [air], setDeleteNum, setIsKonfem, _id: id})
             }
 
         }}>
-
-            <CSSTransition
-                in={isInfo}
-                timeout={1000}
-                classNames="info"
-                unmountOnExit
-                mountOnEnter
-            >
-                <Info {...air}/>
-            </CSSTransition>
-            <div className="card-info">
+            <Info {...air} isInfo={isInfo}/>
+            <div className="card__info">
                 <h2>Name: {name}</h2>
                 <p>Trips: {trips}</p>
                 <button ref={ref}>X</button>

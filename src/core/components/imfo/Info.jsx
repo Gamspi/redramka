@@ -1,8 +1,16 @@
 import React from 'react';
 import "./Info.scss"
+import {CSSTransition} from "react-transition-group";
 
-const Info = ({country,established,head_quaters,logo,name,slogan,website}) => {
+const Info = ({country,established,head_quaters,logo,name,slogan,website,isInfo}) => {
     return (
+        <CSSTransition
+            in={isInfo}
+            timeout={1000}
+            classNames="info"
+            unmountOnExit
+            mountOnEnter
+        >
         <div className="info">
             <div className="info__body">
                 <img src={logo} alt=""/>
@@ -14,6 +22,7 @@ const Info = ({country,established,head_quaters,logo,name,slogan,website}) => {
                 <p>Website: <a href={website}>{website}</a></p>
             </div>
         </div>
+        </CSSTransition>
     );
 };
 
