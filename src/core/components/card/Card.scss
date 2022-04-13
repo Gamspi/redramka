@@ -9,7 +9,11 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
+  transition: all 200ms linear;
 
+  &:hover {
+    box-shadow: 0 0 5px 1px #007cff inset;
+  }
   button {
     position: absolute;
     right: 20px;
@@ -19,9 +23,14 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    transition: all 200ms linear;
 
+    &:hover {
+      box-shadow: 0 0 5px 1px #ff0010 inset;
+    }
 
   }
+
   &__info {
     h2 {
       margin-bottom: 10px;

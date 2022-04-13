@@ -7,3 +7,6 @@
   outline: none;
 
 }
+body[data-fixed='true']{
+  overflow: hidden;
+}

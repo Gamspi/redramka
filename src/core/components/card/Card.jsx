@@ -7,15 +7,20 @@ const Card = ({name, trips, airline: [air], setDeleteNum, setIsKonfem, _id: id})
     const ref = useRef()
     return (
         <div className="card" onClick={(event) => {
+            setDeleteNum(id)
             if (event.target === ref.current) {
                 setIsKonfem(true)
-                setDeleteNum(id)
+
             } else {
                 setIsInfo(!isInfo)
+
             }
 
         }}>
-            <Info {...air} isInfo={isInfo}/>
+            <Info {...air}
+                  isInfo={isInfo}
+                  setIsKonfem={setIsKonfem}
+            />
             <div className="card__info">
                 <h2>Name: {name}</h2>
                 <p>Trips: {trips}</p>

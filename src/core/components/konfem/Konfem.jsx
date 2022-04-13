@@ -1,7 +1,9 @@
 import React from 'react';
 import "./konfem.scss"
 import {CSSTransition} from "react-transition-group";
+
 const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
+
     const handelSetCards = () => {
         handelDelete()
         setIsKonfem(false)
@@ -19,7 +21,9 @@ const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
                     <p>Вы уверенны, что хотите удалить карточку?</p>
                     <div className="konfem__buttons">
                         <button onClick={handelSetCards}>да</button>
-                        <button onClick={() => setIsKonfem(false)}>нет</button>
+                        <button onClick={() => {
+                            setIsKonfem(false)
+                        }}>нет</button>
                     </div>
                 </div>
             </div>
