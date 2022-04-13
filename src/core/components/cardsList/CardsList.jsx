@@ -7,6 +7,7 @@ import {CSSTransition, TransitionGroup,} from 'react-transition-group';
 import Konfem from "../konfem/Konfem";
 import Success from "../success/Success";
 import useObserver from "../../hooks/useObserver";
+import useTheme from "../../hooks/useTheme";
 
 const CardsList = () => {
     const [cards, setCards] = useState([])
@@ -17,6 +18,10 @@ const CardsList = () => {
     const [deleteNum, setDeleteNum] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
     const [ref, is] = useObserver()
+    const [setTheme] = useTheme()
+useEffect(()=>{
+    isKonfem? setTheme("true"):setTheme('')
+},[isKonfem])
 
     async function fetchData() {
         try {
