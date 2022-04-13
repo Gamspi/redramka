@@ -4,8 +4,10 @@ const Header = () => {
     return (
         <header className="header">
             <div className="container">
-                Airlines
 
+                <p>
+                    airlines
+                </p>
             </div>
 
         </header>

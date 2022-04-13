@@ -6,6 +6,7 @@ import "./CardsList.scss"
 import {CSSTransition, TransitionGroup,} from 'react-transition-group';
 import Konfem from "../konfem/Konfem";
 import Success from "../success/Success";
+import useObserver from "../../hooks/useObserver";
 
 const CardsList = () => {
     const [cards, setCards] = useState([])
@@ -15,7 +16,10 @@ const CardsList = () => {
     const [totalPassengers, setTotalPassengers] = useState(0)
     const [deleteNum, setDeleteNum] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
-
+    const [ref, is] = useObserver()
+    useEffect(() => {
+        setIsLoading(is)
+    }, [is])
 
     async function fetchData() {
         try {
@@ -25,38 +29,22 @@ const CardsList = () => {
             setPage(prev => prev + 1)
         } catch (error) {
             console.log(error)
-        }finally {
+        } finally {
             setIsLoading(false)
-
         }
     }
-
     useEffect(() => {
         if (isLoading) {
             fetchData()
-
         }
     }, [isLoading])
 
-    useEffect(() => {
-            setIsLoading(true)
-            document.addEventListener("scroll", handlerScroll)
-            return function () {
-                document.removeEventListener("scroll", handlerScroll)
-            }
-        }, []
-    )
-    const handlerScroll = (event) => {
-        if (event.target.documentElement.scrollHeight - (event.target.documentElement.scrollTop + window.innerHeight) < 100 && totalPassengers >= cards.length) {
-            setIsLoading(true)
-        }
-    }
     const handelDelete = () => {
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsSuccess(true)
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsSuccess(false)
-        },1000)
+        }, 1000)
     }
     return (
         <div className="cards-list">
@@ -91,7 +79,7 @@ const CardsList = () => {
                     )
                 }
             </TransitionGroup>
-
+            <div ref={ref}></div>
         </div>
     );
 };
