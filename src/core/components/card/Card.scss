@@ -12,7 +12,8 @@
   transition: all 200ms linear;
 
   &:hover {
-    box-shadow: 0 0 5px 1px #007cff inset;
+    box-shadow: 0 0 5px 1px #007cff inset,0 0 5px 1px #007cff;
+
   }
   button {
     position: absolute;
@@ -25,7 +26,8 @@
     height: 30px;
     transition: all 200ms linear;
     &:hover {
-      box-shadow: 0 0 5px 1px #ff0010 inset;
+      box-shadow: 0 0 5px 1px #ff0010 inset, 0 0 10px 1px #ff0010;
+
     }
 
   }

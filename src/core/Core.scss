@@ -59,12 +59,12 @@
 
 @keyframes ball {
   0% {
-    transform: rotate(-30deg) scale(0.5, 0.5);
+    transform: rotate(-30deg) scale(0.8, 0.8);
     z-index: -1;
   }
 
   25% {
-    transform: translate(-25px, 15px) rotate(-30deg) scale(0.2, 0.2);
+    transform: translate(-25px, 15px) rotate(-30deg) scale(0.3, 0.3);
 
   }
   50% {
@@ -74,12 +74,12 @@
 
   }
   75% {
-    transform: translate(-18  px, 25px) rotate(-30deg) scale(1, 1);
+    transform: translate(-18px, 25px) rotate(-30deg) scale(1, 1);
     z-index: 3
   }
 
   100% {
-    transform: translate(0px, 0px) rotate(-30deg)scale(0.5, 0.5);
+    transform: translate(0px, 0px) rotate(-30deg)scale(0.8, 0.8);
 
   }
 }
