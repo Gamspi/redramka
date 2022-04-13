@@ -43,7 +43,7 @@ const CardsList = () => {
         setIsSuccess(true)
         setTimeout(() => {
             setIsSuccess(false)
-        }, 1000)
+        }, 1500)
     }
     return (
         <div className="cards-list">
