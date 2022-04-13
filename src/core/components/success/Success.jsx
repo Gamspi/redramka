@@ -12,7 +12,10 @@ const Success = ({isSuccess}) => {
             mountOnEnter
         >
             <div className="success">
-                Успех
+                <h1>
+                    Успех
+                </h1>
+                <p>Вы успешно удалили карточку</p>
             </div>
 
         </CSSTransition>

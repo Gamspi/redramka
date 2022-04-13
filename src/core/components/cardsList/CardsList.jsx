@@ -19,7 +19,7 @@ const CardsList = () => {
     const [isSuccess, setIsSuccess] = useState(false)
     const [ref, is] = useObserver()
     const [setTheme] = useTheme()
-useEffect(()=>{
+    useEffect(()=>{
     isKonfem? setTheme("true"):setTheme('')
 },[isKonfem])
 
@@ -47,8 +47,8 @@ useEffect(()=>{
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsSuccess(true)
         setTimeout(() => {
-            setIsSuccess(false)
-        }, 1500)
+            setIsSuccess(true)
+        }, 2000)
     }
     return (
         <div className="cards-list">
