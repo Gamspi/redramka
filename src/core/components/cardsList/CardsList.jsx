@@ -13,7 +13,7 @@ const CardsList = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [isKonfem, setIsKonfem] = useState(false)
     const [page, setPage] = useState(0)
-    const [totalPassengers, setTotalPassengers] = useState(0)
+    const [totalPassengers, setTotalPassengers] = useState(1)
     const [deleteNum, setDeleteNum] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
     const [ref, is] = useObserver()
@@ -23,7 +23,7 @@ const CardsList = () => {
             setIsLoading(true)
             const {data} = await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=21`)
             setTotalPassengers(data.totalPassengers)
-            setCards(cards=>[...cards, ...data.data])
+            setCards(cards => [...cards, ...data.data])
             setPage(prev => prev + 1)
         } catch (error) {
             alert(error)
@@ -31,8 +31,9 @@ const CardsList = () => {
             setIsLoading(false)
         }
     }
+
     useEffect(() => {
-        if (is) {
+        if (is && totalPassengers > cards.length) {
             fetchData()
         }
     }, [is])
