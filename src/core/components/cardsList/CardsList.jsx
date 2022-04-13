@@ -63,15 +63,11 @@ const CardsList = () => {
                                 classNames="item"
                             >
                                 <li className="item">
-                                    <Card {...element}/>
-                                    <button
-                                        className="cards-list__button"
-                                        onClick={() => {
-                                            setIsKonfem(true)
-                                            setDeleteNum(element._id)
-                                        }}
-                                    >X
-                                    </button>
+                                    <Card
+                                        {...element}
+                                        setIsKonfem={setIsKonfem}
+                                        setDeleteNum={setDeleteNum}
+                                    />
                                 </li>
                             </CSSTransition>
                         )

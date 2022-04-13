@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+
   &__body {
     position: relative;
     display: flex;
@@ -23,16 +24,20 @@
       border-radius: 50%;
       border-top: none;
       animation: loading 1s linear infinite;
+      background: #ffffff;
+      box-shadow: 0 0 20px 50px #ffffff;
 
     }
 
     p {
       font-size: 24px;
       color: #007cff;
+      z-index: 100;
     }
 
 
   }
+
   &-enter {
     //opacity: 0;
     transform: translateX(1000px);

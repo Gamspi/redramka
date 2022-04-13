@@ -1,5 +1,5 @@
 .card {
-
+position: relative;
   border: 1px solid #007cff;
   border-radius: 20px;
   min-width: 350px;
@@ -9,5 +9,14 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-
+  button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #ffa5a5;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
 }
