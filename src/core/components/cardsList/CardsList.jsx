@@ -17,27 +17,25 @@ const CardsList = () => {
     const [deleteNum, setDeleteNum] = useState(0)
     const [isSuccess, setIsSuccess] = useState(false)
     const [ref, is] = useObserver()
-    useEffect(() => {
-        setIsLoading(is)
-    }, [is])
 
     async function fetchData() {
         try {
+            setIsLoading(true)
             const {data} = await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=21`)
             setTotalPassengers(data.totalPassengers)
-            setCards([...cards, ...data.data])
+            setCards(cards=>[...cards, ...data.data])
             setPage(prev => prev + 1)
         } catch (error) {
-            console.log(error)
+            alert(error)
         } finally {
             setIsLoading(false)
         }
     }
     useEffect(() => {
-        if (isLoading) {
+        if (is) {
             fetchData()
         }
-    }, [isLoading])
+    }, [is])
 
     const handelDelete = () => {
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
