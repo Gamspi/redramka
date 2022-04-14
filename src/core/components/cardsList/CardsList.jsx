@@ -77,7 +77,7 @@ const CardsList = () => {
                             key={_id}
                             classNames="success"
                         >
-                            <li onClick={() => setSuccess(prev => [...prev.filter(elem => elem._id !== _id)])}>
+                            <li>
                                 <Success name={name}/>
                             </li>
                         </CSSTransition>
