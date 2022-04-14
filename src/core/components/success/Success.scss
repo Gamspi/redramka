@@ -1,12 +1,10 @@
 .success {
-  z-index: 100;
   padding: 30px;
   background: #37ff00;
   border-radius: 20px;
   color: white;
   box-shadow: 0 0 5px 3px #06ff00;
   position: relative;
-
   h1 {
     font-size: 40px;
 
@@ -22,7 +20,7 @@
     border-radius: 10px 0 10px 10px;
     background: #a2ff46;
     transform: rotate(45deg);
-    z-index: 201;
+    z-index: 1;
 
   }
 
@@ -41,7 +39,7 @@
   }
 
   &-enter {
-    transform: translateY(200px);
+    transform: translateY(-1200px);
     //opacity: 0;
   }
 
@@ -55,15 +53,12 @@
   &-exit {
     //opacity: 1;
     transform: translateX(0);
-
   }
 
   &-exit-active {
     //opacity: 0;
     transform: translateX(1000px);
-
     transition: all 500ms;
-
   }
 
 
