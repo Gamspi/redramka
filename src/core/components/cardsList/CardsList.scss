@@ -3,12 +3,29 @@
   min-height: 100%;
   transition: all 500ms;
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
+  &__body {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__success {
+    ul {
+      display: flex;
+      position: fixed;
+      flex-wrap: nowrap;
+      right: 30px;
+      bottom: 30px;
+      z-index: 100;
+      li{
+        margin: 0 10px 0 10px ;
+
+      }
+    }
+
   }
 }
-
 
 
 .item {

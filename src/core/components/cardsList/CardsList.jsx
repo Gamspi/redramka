@@ -17,7 +17,7 @@ const CardsList = () => {
     const [page, setPage] = useState(0)
     const [totalPassengers, setTotalPassengers] = useState(1)
     const [deleteNum, setDeleteNum] = useState(0)
-    const [isSuccess, setIsSuccess] = useState(false)
+    const [success, setSuccess] = useState([])
     const [isInfo, setIsInfo] = useState(false)
     const [card, setCard] = useState(null)
     const [ref, is] = useObserver()
@@ -49,31 +49,44 @@ const CardsList = () => {
 
 
     const handelDelete = () => {
-
+        setSuccess(prev => [...prev, cards.find(elem => elem._id === deleteNum)])
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsInfo(false)
         setTimeout(() => {
             setCard(null)
         }, 300)
-        setIsSuccess(true)
 
     }
     useEffect(() => {
-        if (isSuccess) {
+        if (success.length > 0) {
             setTimeout(() => {
-                setIsSuccess(false)
-            }, 1500)
-
+                setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
+            }, 3000)
         }
-
-
-    }, [isSuccess])
+    }, [success])
 
 
     return (
         <div className="cards-list">
             <Loading isLoading={isLoading}/>
-            <Success isSuccess={isSuccess}/>
+            <div className="cards-list__success">
+                <TransitionGroup component='ul'>
+                    {success.map(({name, _id}) => (
+                        <CSSTransition
+                            timeout={500}
+                            key={_id}
+                            classNames="success"
+                        >
+                            <li onClick={() => setSuccess(prev => [...prev.filter(elem => elem._id !== _id)])}>
+                                <Success name={name}/>
+                            </li>
+                        </CSSTransition>
+
+                    ))}
+
+
+                </TransitionGroup>
+            </div>
             <Konfem
                 handelDelete={handelDelete}
                 setIsKonfem={setIsKonfem}
@@ -84,35 +97,37 @@ const CardsList = () => {
                   setIsInfo={setIsInfo}
                   setIsKonfem={setIsKonfem}
             />
-            <TransitionGroup component='ul'>
-                {
-                    cards.map(element => (
-                            <CSSTransition
-                                timeout={500}
-                                key={element._id}
-                                classNames="item"
-                            >
-                                <li className="item"
-                                    onClick={(event) => {
-                                        setDeleteNum(element._id)
-                                        if (!event.target.classList.contains("card__button")
-                                        ) {
-                                            setCard(element.airline[0])
-                                            setIsInfo(true)
-
-                                        }
-                                    }}
+            <div className="cards-list__body">
+                <TransitionGroup component='ul'>
+                    {
+                        cards.map(element => (
+                                <CSSTransition
+                                    timeout={500}
+                                    key={element._id}
+                                    classNames="item"
                                 >
-                                    <Card
-                                        {...element}
-                                        setIsKonfem={setIsKonfem}
-                                    />
-                                </li>
-                            </CSSTransition>
+                                    <li className="item"
+                                        onClick={(event) => {
+                                            setDeleteNum(element._id)
+                                            if (!event.target.classList.contains("card__button")
+                                            ) {
+                                                setCard(element.airline[0])
+                                                setIsInfo(true)
+
+                                            }
+                                        }}
+                                    >
+                                        <Card
+                                            {...element}
+                                            setIsKonfem={setIsKonfem}
+                                        />
+                                    </li>
+                                </CSSTransition>
+                            )
                         )
-                    )
-                }
-            </TransitionGroup>
+                    }
+                </TransitionGroup>
+            </div>
             <div ref={ref}/>
         </div>
     );
