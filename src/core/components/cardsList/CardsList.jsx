@@ -55,17 +55,11 @@ const CardsList = () => {
         setTimeout(() => {
             setCard(null)
         }, 300)
+        setTimeout(() => {
+            setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
+        }, 2000)
 
     }
-    useEffect(() => {
-        if (success.length > 0) {
-            setTimeout(() => {
-                setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
-            }, 3000)
-        }
-    }, [success])
-
-
     return (
         <div className="cards-list">
             <Loading isLoading={isLoading}/>
