@@ -1,9 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import "./Success.scss"
 
-const Success = ({name}) => {
-    return (
-
+const Success = ({name}) => (
             <div className="success">
                 <h1>
                     Успех
@@ -11,8 +9,7 @@ const Success = ({name}) => {
                 <p>Вы успешно удалили карточку</p>
                 <p>{name}</p>
             </div>
-
     );
-};
 
-export default Success;
+
+export default memo(Success);

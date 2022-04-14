@@ -7,7 +7,6 @@
   position: relative;
   h1 {
     font-size: 40px;
-
   }
 
   &:after {
@@ -21,7 +20,6 @@
     background: #a2ff46;
     transform: rotate(45deg);
     z-index: 1;
-
   }
 
   &:before {
@@ -35,28 +33,22 @@
     background: #a2ff46;
     transform: rotate(-50deg);
     z-index: 201;
-
   }
 
   &-enter {
     transform: translateY(-1200px);
-    //opacity: 0;
   }
 
   &-enter-active {
-    //opacity: 1;
     transform: translateY(0);
-
-    transition: all 500ms;
+    transition: all 200ms;
   }
 
   &-exit {
-    //opacity: 1;
     transform: translateX(0);
   }
 
   &-exit-active {
-    //opacity: 0;
     transform: translateX(1000px);
     transition: all 500ms;
   }
@@ -85,7 +77,6 @@
       &:before {
         right: -37px;
       }
-
     }
   }
 }

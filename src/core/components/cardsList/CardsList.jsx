@@ -67,7 +67,7 @@ const CardsList = () => {
                 <TransitionGroup component='ul'>
                     {success.map(({name, _id}) => (
                         <CSSTransition
-                            timeout={500}
+                            timeout={200}
                             key={_id}
                             classNames="success"
                         >
@@ -107,14 +107,13 @@ const CardsList = () => {
                                             ) {
                                                 setCard(element.airline[0])
                                                 setIsInfo(true)
+                                            } else {
+                                                setIsKonfem(true)
 
                                             }
                                         }}
                                     >
-                                        <Card
-                                            {...element}
-                                            setIsKonfem={setIsKonfem}
-                                        />
+                                        <Card {...element}/>
                                     </li>
                                 </CSSTransition>
                             )

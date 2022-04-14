@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import "./konfem.scss"
 import {CSSTransition} from "react-transition-group";
 
 const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
-
     const handelSetCards = () => {
         handelDelete()
         setIsKonfem(false)
@@ -28,8 +27,7 @@ const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
                 </div>
             </div>
         </CSSTransition>
-
     );
 };
 
-export default Konfem;
+export default memo(Konfem,(prevprops,nextprops)=>!prevprops.isKonfem!==nextprops.isKonfem);

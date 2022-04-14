@@ -2,8 +2,7 @@ import React from 'react';
 import "./loading.scss"
 import {CSSTransition} from "react-transition-group";
 
-const Loading = ({isLoading}) => {
-    return (
+const Loading = ({isLoading}) =>(
         <CSSTransition
             in={isLoading}
             classNames="loading"
@@ -19,6 +18,6 @@ const Loading = ({isLoading}) => {
         </CSSTransition>
 
     );
-};
+
 
 export default Loading;

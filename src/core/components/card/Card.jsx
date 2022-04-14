@@ -1,15 +1,8 @@
 import React from 'react';
 import "./Card.scss"
-const Card = ({name, trips, setIsKonfem}) => {
-    return (
-        <div className="card" onClick={(event) => {
-            if (
-                event.target.classList.contains("card__button")
-            ) {
-                setIsKonfem(true)
-            }
-        }}>
 
+const Card = ({name, trips}) => (
+        <div className="card" >
             <div className="card__info">
                 <h2>Name: {name}</h2>
                 <p>Trips: {trips}</p>
@@ -17,6 +10,5 @@ const Card = ({name, trips, setIsKonfem}) => {
             </div>
         </div>
     );
-};
 
 export default Card;
