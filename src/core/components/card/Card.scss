@@ -10,7 +10,10 @@
   align-items: start;
   justify-content: space-between;
   transition: all 200ms linear;
+@media (max-width: 380px) {
+  min-width: 300px;
 
+}
   &:hover {
     box-shadow: 0 0 5px 1px #007cff inset,0 0 5px 1px #007cff;
 

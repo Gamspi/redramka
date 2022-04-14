@@ -33,7 +33,10 @@
   flex: 1 1 auto;
   margin: 10px;
   list-style-type: none;
+@media (max-width: 360px) {
+  margin: 5px;
 
+}
   &-enter {
     transform: translateY(1200px);
   }

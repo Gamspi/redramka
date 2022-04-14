@@ -20,7 +20,9 @@
     font-size: 34px;
     z-index: 30;
     text-shadow: 0 0 10px #000e56;
-
+    @media (max-width: 350px) {
+      margin-left: 20px;
+    }
     &:first-letter {
       text-transform: uppercase;
     }
@@ -40,6 +42,7 @@
       z-index: -1;
       box-sizing: border-box;
     }
+
   }
 }
 
@@ -54,6 +57,9 @@
   padding: 0 10px 0 10px;
   max-width: 1300px;
   margin: 0 auto;
+  @media (max-width: 350px) {
+    padding: 0 5px 0 5px;
+  }
 }
 
 
