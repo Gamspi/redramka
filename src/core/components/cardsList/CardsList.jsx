@@ -57,7 +57,7 @@ const CardsList = () => {
         }, 300)
         setTimeout(() => {
             setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
-        }, 1500)
+        }, 2000)
 
     }
     return (
@@ -67,7 +67,7 @@ const CardsList = () => {
                 <TransitionGroup component='ul'>
                     {success.map(({name, _id}) => (
                         <CSSTransition
-                            timeout={200}
+                            timeout={800}
                             key={_id}
                             classNames="success"
                         >
