@@ -23,7 +23,7 @@ const CardsList = () => {
     const [ref, is] = useObserver()
     const [setTheme] = useTheme()
     useEffect(() => {
-        (isKonfem ||isInfo ) ? setTheme("true") : setTheme('')
+        (isKonfem || isInfo) ? setTheme("true") : setTheme('')
     }, [isKonfem, isInfo])
 
     async function fetchData() {
@@ -45,17 +45,30 @@ const CardsList = () => {
             fetchData()
         }
     }, [is])
+
+
     const handelDelete = () => {
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
-        setIsSuccess(true)
         setIsInfo(false)
         setTimeout(() => {
             setCard(null)
         }, 300)
-        setTimeout(() => {
-            setIsSuccess(false)
-        }, 2000)
+        setIsSuccess(true)
+
     }
+    useEffect(() => {
+        if (isSuccess) {
+
+            setTimeout(() => {
+                setIsSuccess(false)
+            }, 1500)
+
+        }
+
+
+    }, [isSuccess])
+
+
     return (
         <div className="cards-list">
             <Loading isLoading={isLoading}/>
