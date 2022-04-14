@@ -25,11 +25,12 @@ const CardsList = () => {
     useEffect(() => {
         (isKonfem || isInfo) ? setTheme("true") : setTheme('')
     }, [isKonfem, isInfo])
+    const limit = 60
 
     async function fetchData() {
         try {
             setIsLoading(true)
-            const {data} = await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=21`)
+            const {data} = await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=${limit}`)
             setTotalPassengers(data.totalPassengers)
             setCards(cards => [...cards, ...data.data])
             setPage(prev => prev + 1)
@@ -48,6 +49,7 @@ const CardsList = () => {
 
 
     const handelDelete = () => {
+
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
         setIsInfo(false)
         setTimeout(() => {
@@ -58,7 +60,6 @@ const CardsList = () => {
     }
     useEffect(() => {
         if (isSuccess) {
-
             setTimeout(() => {
                 setIsSuccess(false)
             }, 1500)
