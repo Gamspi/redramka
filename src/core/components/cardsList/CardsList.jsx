@@ -57,7 +57,7 @@ const CardsList = () => {
         }, 300)
         setTimeout(() => {
             setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
-        }, 5000)
+        }, 2000)
 
     }
     return (
