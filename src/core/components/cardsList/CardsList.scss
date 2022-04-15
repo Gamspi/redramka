@@ -1,13 +1,11 @@
 .cards-list {
-  overflow: hidden;
   min-height: 100%;
   transition: all 500ms;
-
+  padding: 10px 0;
   &__body {
     margin: 0 -10px;
     @media (max-width: 360px) {
       margin: 0;
-
     }
     ul {
       display: flex;

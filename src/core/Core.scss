@@ -1,6 +1,8 @@
 .Core {
   min-height: 100vh;
-  background: #e1f5ff;
+
+  background: linear-gradient(to left, #5ca2ff,#e1f5ff,#5ca2ff);
+
   display: flex;
   flex-direction: column;
 }

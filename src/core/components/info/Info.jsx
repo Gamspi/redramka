@@ -42,7 +42,7 @@ const Info = ({
                     <p>Head quaters: {head_quaters}</p>
                     <p>Website: <a href={website}>{website}</a></p>
                     <button className="info__button">Удалить</button>
-                    <button className="info__button-close">X</button>
+                    <button className="info__button-close">&#10008;</button>
                 </div>
             </div>
         </CSSTransition>

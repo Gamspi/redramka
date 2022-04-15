@@ -10,28 +10,40 @@
   align-items: start;
   justify-content: space-between;
   transition: all 200ms linear;
-@media (max-width: 380px) {
-  min-width: 300px;
-
-}
-  &:hover {
-    box-shadow: 0 0 5px 1px #007cff inset,0 0 5px 1px #007cff;
+  box-shadow: 0 0 10px #000e56;
+  @media (max-width: 380px) {
+    min-width: 300px;
 
   }
+
+  &:hover {
+    box-shadow: 0 0 5px 1px #007cff inset, 0 0 5px 1px #007cff;
+    transform: scale(1.05, 1.05);
+    @media (max-width: 1110px) {
+      transform: scale(1.02, 1.05);
+
+    }
+  }
+
   button {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
     background: #ffa5a5;
     border: none;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     transition: all 200ms linear;
+    color: #b90000;
+    box-shadow: -3px -5px 10px 2px #ff0010 inset;
+
     &:hover {
-      box-shadow: 0 0 5px 1px #ff0010 inset, 0 0 10px 1px #ff0010;
+      box-shadow: 3px 5px 10px 2px #ff0010 inset, 0 0 10px 1px #ff0010;
+      transform: scale(1.1, 1.1);
 
     }
+
 
   }
 

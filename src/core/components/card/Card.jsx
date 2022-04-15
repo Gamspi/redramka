@@ -6,7 +6,7 @@ const Card = ({name, trips}) => (
             <div className="card__info">
                 <h2>Name: {name}</h2>
                 <p>Trips: {trips}</p>
-                <button className="card__button">X</button>
+                <button className="card__button">&#10008;</button>
             </div>
         </div>
     );

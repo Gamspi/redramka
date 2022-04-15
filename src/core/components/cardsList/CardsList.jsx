@@ -22,7 +22,7 @@ const CardsList = () => {
     const [isInfo, setIsInfo] = useState(false)
     const [card, setCard] = useState(null)
     const [ref, is] = useObserver()
-    const [setTheme] = useTheme()
+    const [setTheme] = useTheme("fixed")
     useEffect(() => {
         (isKonfem || isInfo) ? setTheme("true") : setTheme('')
     }, [isKonfem, isInfo])
