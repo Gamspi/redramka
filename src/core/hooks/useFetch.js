@@ -16,7 +16,7 @@ export default function useFetch(){
             setCards(cards => [...cards, ...data.data])
             setPage(prev => prev + 1)
         } catch (error) {
-            alert(error)
+            alert("Ошибка соединения \n"+error)
         } finally {
             setIsLoading(false)
         }
