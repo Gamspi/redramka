@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 import Loading from "../loading/Loading";
 import Card from "../card/Card";
 import "./CardsList.scss"
@@ -9,46 +8,26 @@ import Success from "../success/Success";
 import useObserver from "../../hooks/useObserver";
 import useTheme from "../../hooks/useTheme";
 import Info from "../info/Info";
-import {limit} from "../../constants/limit";
+import useFetch from "../../hooks/useFetch";
 
 const CardsList = () => {
-    const [cards, setCards] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
     const [isKonfem, setIsKonfem] = useState(false)
-    const [page, setPage] = useState(0)
-    const [totalPassengers, setTotalPassengers] = useState(1)
     const [deleteNum, setDeleteNum] = useState(0)
     const [success, setSuccess] = useState([])
     const [isInfo, setIsInfo] = useState(false)
     const [card, setCard] = useState(null)
     const [ref, is] = useObserver()
     const [setTheme] = useTheme("fixed")
+    const{totalPassengers,isLoading,fetchData,cards, setCards}=useFetch()
     useEffect(() => {
         (isKonfem || isInfo) ? setTheme("true") : setTheme('')
     }, [isKonfem, isInfo])
-
-
-    async function fetchData() {
-        try {
-            setIsLoading(true)
-            const {data} = await axios.get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=${limit}`)
-            setTotalPassengers(data.totalPassengers)
-            setCards(cards => [...cards, ...data.data])
-            setPage(prev => prev + 1)
-        } catch (error) {
-            alert(error)
-        } finally {
-            setIsLoading(false)
-        }
-    }
 
     useEffect(() => {
         if (is && totalPassengers > cards.length) {
             fetchData()
         }
     }, [is])
-
-
     const handelDelete = () => {
         setSuccess(prev => [...prev, cards.find(elem => elem._id === deleteNum)])
         setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
@@ -76,10 +55,7 @@ const CardsList = () => {
                                 <Success name={name}/>
                             </li>
                         </CSSTransition>
-
                     ))}
-
-
                 </TransitionGroup>
             </div>
             <Konfem
@@ -110,7 +86,6 @@ const CardsList = () => {
                                                 setIsInfo(true)
                                             } else {
                                                 setIsKonfem(true)
-
                                             }
                                         }}
                                     >
