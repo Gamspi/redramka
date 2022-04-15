@@ -18,7 +18,6 @@ const CardsList = () => {
     const [ref, is] = useObserver()
     const [setTheme] = useTheme("fixed")
     const{totalPassengers,isLoading,fetchData,cards, setCards}=useFetch()
-    console.log(isConfirm)
     useEffect(() => {
         (isConfirm || isInfo) ? setTheme("true") : setTheme('')
     }, [isConfirm, isInfo])

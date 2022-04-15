@@ -12,7 +12,7 @@ const Confirm = ({isConfirm, handelDelete, setIsConfirm }) => {
         <CSSTransition
             in={isConfirm}
             timeout={500}
-            classNames="Confirm"
+            classNames="confirm"
             unmountOnExit
             mountOnEnter
         >
