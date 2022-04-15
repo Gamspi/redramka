@@ -13,12 +13,11 @@
   box-shadow: 0 0 10px #000e56;
   @media (max-width: 380px) {
     min-width: 300px;
-
   }
-
   &:hover {
-    box-shadow: 0 0 5px 1px #007cff inset, 0 0 5px 1px #007cff;
+    box-shadow: -2px -2px 10px 3px #007cff inset, 0 0 15px 5px #007cff;
     transform: scale(1.05, 1.05);
+    z-index: 2;
     @media (max-width: 1110px) {
       transform: scale(1.02, 1.05);
 
