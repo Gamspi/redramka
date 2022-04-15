@@ -12,7 +12,6 @@ import useFetch from "../../hooks/useFetch";
 
 const CardsList = () => {
     const [isKonfem, setIsKonfem] = useState(false)
-    const [deleteNum, setDeleteNum] = useState(0)
     const [success, setSuccess] = useState([])
     const [isInfo, setIsInfo] = useState(false)
     const [card, setCard] = useState(null)
@@ -29,8 +28,8 @@ const CardsList = () => {
         }
     }, [is])
     const handelDelete = () => {
-        setSuccess(prev => [...prev, cards.find(elem => elem._id === deleteNum)])
-        setCards(cards => [...cards.filter(({_id}) => _id !== deleteNum)])
+        setSuccess(prev => [...prev, cards.find(elem => elem._id === card?._id)])
+        setCards(cards => [...cards.filter(({_id}) => _id !== card?._id)])
         setIsInfo(false)
         setTimeout(() => {
             setCard(null)
@@ -63,7 +62,7 @@ const CardsList = () => {
                 setIsKonfem={setIsKonfem}
                 isKonfem={isKonfem}
             />
-            <Info {...card}
+            <Info {...card?.airline[0]}
                   isInfo={isInfo}
                   setIsInfo={setIsInfo}
                   setIsKonfem={setIsKonfem}
@@ -79,10 +78,10 @@ const CardsList = () => {
                                 >
                                     <li className="item"
                                         onClick={(event) => {
-                                            setDeleteNum(element._id)
+                                            setCard(element)
+
                                             if (!event.target.classList.contains("card__button")
                                             ) {
-                                                setCard(element.airline[0])
                                                 setIsInfo(true)
                                             } else {
                                                 setIsKonfem(true)
