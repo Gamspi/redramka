@@ -14,7 +14,7 @@ const CardsList = () => {
     const [isKonfem, setIsKonfem] = useState(false)
     const [success, setSuccess] = useState([])
     const [isInfo, setIsInfo] = useState(false)
-    const [card, setCard] = useState(null)
+    const [activeCard, setActiveCard] = useState(null)
     const [ref, is] = useObserver()
     const [setTheme] = useTheme("fixed")
     const{totalPassengers,isLoading,fetchData,cards, setCards}=useFetch()
@@ -28,11 +28,11 @@ const CardsList = () => {
         }
     }, [is])
     const handelDelete = () => {
-        setSuccess(prev => [...prev, cards.find(elem => elem._id === card?._id)])
-        setCards(cards => [...cards.filter(({_id}) => _id !== card?._id)])
+        setSuccess(prev => [...prev, cards.find(elem => elem._id === activeCard?._id)])
+        setCards(cards => [...cards.filter(({_id}) => _id !== activeCard?._id)])
         setIsInfo(false)
         setTimeout(() => {
-            setCard(null)
+            setActiveCard(null)
         }, 300)
         setTimeout(() => {
             setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
@@ -62,7 +62,7 @@ const CardsList = () => {
                 setIsKonfem={setIsKonfem}
                 isKonfem={isKonfem}
             />
-            <Info {...card?.airline[0]}
+            <Info {...activeCard?.airline[0]}
                   isInfo={isInfo}
                   setIsInfo={setIsInfo}
                   setIsKonfem={setIsKonfem}
@@ -78,7 +78,7 @@ const CardsList = () => {
                                 >
                                     <li className="item"
                                         onClick={(event) => {
-                                            setCard(element)
+                                            setActiveCard(element)
 
                                             if (!event.target.classList.contains("card__button")
                                             ) {
