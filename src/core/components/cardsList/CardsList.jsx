@@ -3,24 +3,25 @@ import Loading from "../loading/Loading";
 import Card from "../card/Card";
 import "./CardsList.scss"
 import {CSSTransition, TransitionGroup,} from 'react-transition-group';
-import Konfem from "../konfem/Konfem";
 import Success from "../success/Success";
 import useObserver from "../../hooks/useObserver";
 import useTheme from "../../hooks/useTheme";
 import Info from "../info/Info";
 import useFetch from "../../hooks/useFetch";
+import Confirm from "../konfem/Confirm";
 
 const CardsList = () => {
-    const [isKonfem, setIsKonfem] = useState(false)
+    const [isConfirm, setIsConfirm] = useState(false)
     const [success, setSuccess] = useState([])
     const [isInfo, setIsInfo] = useState(false)
     const [activeCard, setActiveCard] = useState(null)
     const [ref, is] = useObserver()
     const [setTheme] = useTheme("fixed")
     const{totalPassengers,isLoading,fetchData,cards, setCards}=useFetch()
+    console.log(isConfirm)
     useEffect(() => {
-        (isKonfem || isInfo) ? setTheme("true") : setTheme('')
-    }, [isKonfem, isInfo])
+        (isConfirm || isInfo) ? setTheme("true") : setTheme('')
+    }, [isConfirm, isInfo])
 
     useEffect(() => {
         if (is && totalPassengers > cards.length) {
@@ -28,7 +29,7 @@ const CardsList = () => {
         }
     }, [is])
     const handelDelete = () => {
-        setSuccess(prev => [...prev, cards.find(elem => elem._id === activeCard?._id)])
+        setSuccess(prev => [...prev, cards.find(({_id:id}) => id === activeCard?._id)])
         setCards(cards => [...cards.filter(({_id}) => _id !== activeCard?._id)])
         setIsInfo(false)
         setTimeout(() => {
@@ -37,7 +38,6 @@ const CardsList = () => {
         setTimeout(() => {
             setSuccess(prev => [...prev.filter((elem, i, a) => elem._id !== a[0]._id)])
         }, 1700)
-
     }
     return (
         <div className="cards-list">
@@ -57,15 +57,15 @@ const CardsList = () => {
                     ))}
                 </TransitionGroup>
             </div>
-            <Konfem
+            <Confirm
                 handelDelete={handelDelete}
-                setIsKonfem={setIsKonfem}
-                isKonfem={isKonfem}
+                setIsConfirm={setIsConfirm}
+                isConfirm={isConfirm}
             />
             <Info {...activeCard?.airline[0]}
                   isInfo={isInfo}
                   setIsInfo={setIsInfo}
-                  setIsKonfem={setIsKonfem}
+                  setIsKonfem={setIsConfirm}
             />
             <div className="cards-list__body">
                 <TransitionGroup component='ul'>
@@ -84,7 +84,7 @@ const CardsList = () => {
                                             ) {
                                                 setIsInfo(true)
                                             } else {
-                                                setIsKonfem(true)
+                                                setIsConfirm(true)
                                             }
                                         }}
                                     >
