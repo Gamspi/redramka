@@ -37,7 +37,7 @@
       transition: all 200ms linear;
 
       &:hover {
-        box-shadow: 0 0 5px 1px #007cff inset;
+        box-shadow: 0 0 5px 1px #007cff inset,0 0 5px 1px #007cff;
       }
     }
   }

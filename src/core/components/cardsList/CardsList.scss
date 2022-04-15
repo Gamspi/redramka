@@ -4,6 +4,11 @@
   transition: all 500ms;
 
   &__body {
+    margin: 0 -10px;
+    @media (max-width: 360px) {
+      margin: 0;
+
+    }
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -18,9 +23,9 @@
       right: 30px;
       bottom: 30px;
       z-index: 100;
-      li{
-        margin: 10px 0 10px 0 ;
 
+      li {
+        margin: 10px 0 10px 0;
       }
     }
 
@@ -33,10 +38,10 @@
   flex: 1 1 auto;
   margin: 10px;
   list-style-type: none;
-@media (max-width: 360px) {
-  margin: 5px;
+  @media (max-width: 360px) {
+    margin: 5px;
+  }
 
-}
   &-enter {
     transform: translateY(1200px);
   }

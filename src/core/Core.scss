@@ -5,54 +5,6 @@
   flex-direction: column;
 }
 
-.main {
-  flex: 1 1 100%;
-}
-
-.header {
-  background: #007cff;
-  color: white;
-  padding: 10px 0;
-  box-shadow: 0px -3px 5px 1px #000e56 inset;
-
-  p {
-    position: relative;
-    font-size: 34px;
-    z-index: 30;
-    text-shadow: 0 0 10px #000e56;
-    @media (max-width: 350px) {
-      margin-left: 20px;
-    }
-    &:first-letter {
-      text-transform: uppercase;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      left: 70px;
-      width: 10px;
-      height: 10px;
-      background: #06ff00;
-      border-radius: 50%;
-
-      box-shadow: 0 0 10px #0022ff, 2px 0 3px 1px #1b8900 inset;
-      animation: ball 2s linear infinite;
-      z-index: -1;
-      box-sizing: border-box;
-    }
-
-  }
-}
-
-.footer {
-  background: #a8cdff;
-  padding: 10px 0;
-  text-align: end;
-
-}
-
 .container {
   padding: 0 10px 0 10px;
   max-width: 1300px;
@@ -63,29 +15,3 @@
 }
 
 
-@keyframes ball {
-  0% {
-    transform: rotate(-30deg) scale(0.8, 0.8);
-    z-index: -1;
-  }
-
-  25% {
-    transform: translate(-25px, 15px) rotate(-30deg) scale(0.3, 0.3);
-
-  }
-  50% {
-    transform: translate(-40px, 40px) rotate(-30deg) scale(0.5, 0.5);
-    z-index: -1;
-
-
-  }
-  75% {
-    transform: translate(-18px, 25px) rotate(-30deg) scale(1, 1);
-    z-index: 3
-  }
-
-  100% {
-    transform: translate(0px, 0px) rotate(-30deg)scale(0.8, 0.8);
-
-  }
-}

@@ -9,6 +9,7 @@ import Success from "../success/Success";
 import useObserver from "../../hooks/useObserver";
 import useTheme from "../../hooks/useTheme";
 import Info from "../info/Info";
+import {limit} from "../../constants/limit";
 
 const CardsList = () => {
     const [cards, setCards] = useState([])
@@ -25,7 +26,7 @@ const CardsList = () => {
     useEffect(() => {
         (isKonfem || isInfo) ? setTheme("true") : setTheme('')
     }, [isKonfem, isInfo])
-    const limit = 60
+
 
     async function fetchData() {
         try {
