@@ -67,7 +67,7 @@ const CardsList = () => {
                 <TransitionGroup component='ul'>
                     {success.map(({name, _id}) => (
                         <CSSTransition
-                            timeout={800}
+                            timeout={500}
                             key={_id}
                             classNames="success"
                         >
