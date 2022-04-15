@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-box-shadow: 0 0 20px 1px #000e56;
+    box-shadow: 0 0 20px 1px #000e56;
   }
 
   &__buttons {
@@ -30,15 +30,19 @@ box-shadow: 0 0 20px 1px #000e56;
     button {
       margin: 10px;
       width: 55px;
-      height:40px;
+      height: 40px;
       background: #78ffe6;
       border: none;
       border-radius: 20px;
       transition: all 200ms linear;
       box-shadow: 0 0 10px 7px #ffffff inset;
 
+      &:disabled:hover {
+        box-shadow: 0 0 10px 7px #ffffff inset;
+      }
+
       &:hover {
-        box-shadow: 0 0 5px 3px #007cff inset,0 0 10px 7px #007cff;
+        box-shadow: 0 0 5px 3px #007cff inset, 0 0 10px 7px #007cff;
       }
     }
   }

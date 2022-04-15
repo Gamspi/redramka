@@ -15,10 +15,10 @@ const Info = ({
                   setIsKonfem
               }) => {
     const handlerClose = (event) => {
-        if (event.target.classList.contains("info__button-close") || !event.target.closest(".info__body")) {
+        if (isInfo&&(event.target.classList.contains("info__button-close") || !event.target.closest(".info__body"))) {
             setIsInfo(false)
 
-        } else if (event.target.classList.contains("info__button")) {
+        } else if (isInfo&&(event.target.classList.contains("info__button"))) {
             setIsKonfem(true)
         }
 

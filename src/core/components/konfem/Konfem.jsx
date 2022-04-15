@@ -19,10 +19,10 @@ const Konfem = ({setIsKonfem, handelDelete, isKonfem}) => {
                 <div className="konfem__body">
                     <p>Вы уверенны, что хотите удалить карточку?</p>
                     <div className="konfem__buttons">
-                        <button onClick={handelSetCards}>да</button>
+                        <button onClick={handelSetCards} disabled={!isKonfem}>да</button>
                         <button onClick={() => {
                             setIsKonfem(false)
-                        }}>нет</button>
+                        } } disabled={!isKonfem}>нет</button>
                     </div>
                 </div>
             </div>
