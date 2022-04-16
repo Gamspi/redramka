@@ -46,7 +46,7 @@ const CardsList: FC = () => {
             <Loading isLoading={isLoading}/>
             <div className="cards-list__success">
                 <TransitionGroup component='ul'>
-                    {success?.map(({name, id}) => (
+                    {success.map(({name, id}) => (
                         <CSSTransition
                             timeout={500}
                             key={id}
