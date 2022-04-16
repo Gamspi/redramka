@@ -1,7 +1,9 @@
 import React, {memo} from 'react';
 import "./Success.scss"
-
-const Success = ({name}:{name:string}) => (
+interface props{
+    name:string
+}
+const Success = ({name}:props) => (
             <div className="success">
                 <h1>
                     Успех

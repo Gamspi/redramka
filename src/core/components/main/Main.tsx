@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import CardsList from "../cardsList/CardsList";
 import "./main.scss"
-const Main = () => (
+const Main:FC = () => (
         <main className="main">
             <div className="container">
                 <CardsList/>

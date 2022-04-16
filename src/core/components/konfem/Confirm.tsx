@@ -1,8 +1,14 @@
-import React, {memo} from 'react';
+import React, {Dispatch, memo, SetStateAction} from 'react';
 import "./confirm.scss"
 import {CSSTransition} from "react-transition-group";
 
-const Confirm = ({isConfirm, handelDelete, setIsConfirm }:any) => {
+interface props {
+    isConfirm: boolean,
+    handelDelete: Function,
+    setIsConfirm: Dispatch<SetStateAction<boolean>>
+}
+
+const Confirm = ({isConfirm, handelDelete, setIsConfirm}: props) => {
     const handelSetCards = () => {
         handelDelete()
         setIsConfirm(false)
@@ -23,7 +29,8 @@ const Confirm = ({isConfirm, handelDelete, setIsConfirm }:any) => {
                         <button onClick={handelSetCards} disabled={!isConfirm}>да</button>
                         <button onClick={() => {
                             setIsConfirm(false)
-                        } } disabled={!isConfirm}>нет</button>
+                        }} disabled={!isConfirm}>нет
+                        </button>
                     </div>
                 </div>
             </div>
@@ -32,4 +39,4 @@ const Confirm = ({isConfirm, handelDelete, setIsConfirm }:any) => {
 };
 
 
-export default memo(Confirm,(prevProps, nextProps)=>!prevProps.isConfirm!==nextProps.isConfirm);
+export default memo(Confirm, (prevProps, nextProps) => !prevProps.isConfirm !== nextProps.isConfirm);

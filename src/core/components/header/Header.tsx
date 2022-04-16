@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FC} from 'react';
 import "./header.scss"
-const Header = () => (
+const Header:FC = () => (
         <header className="header">
             <div className="container">
                 <p>

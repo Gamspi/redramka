@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, MouseEvent,useEffect, useState} from 'react';
 import Loading from "../loading/Loading";
 import Card from "../card/Card";
 import "./CardsList.scss"
@@ -23,19 +23,19 @@ const CardsList: FC = () => {
         (isConfirm || isInfo) ? setTheme("true") : setTheme('')
     }, [isConfirm, isInfo])
 
-    useEffect(() => {
+     useEffect(() => {
         if (is && totalPassengers > cards.length) {
             fetchData()
         }
     }, [is])
-    const handelDelete = (): void => {
+    const handelDelete = ():void => {
 
-        setSuccess((prev): any => [...prev, cards.find(({_id: id}) => id === activeCard._id)])
-        setCards(cards => [...cards.filter(({_id}) => _id !== activeCard?._id)])
+        setSuccess((prev) => [...prev, activeCard])
+        setCards(cards => [...cards.filter(({_id}) => _id !== activeCard._id)])
         setIsInfo(false)
-        setTimeout(() => {
-            setActiveCard({} as IPassengers)
-        }, 300)
+        // setTimeout(() => {
+        //     setActiveCard({} as IPassengers)
+        // }, 300)
         setTimeout(() => {
             setSuccess(prev => [...prev.filter(({_id}, i, a) => _id !== a[0]._id)])
         }, 1700)
@@ -74,7 +74,7 @@ const CardsList: FC = () => {
                     activeCard={activeCard.airline}
                     isInfo={isInfo}
                     setIsInfo={setIsInfo}
-                    setIsKonfem={setIsConfirm}
+                    setIsConfirm={setIsConfirm}
                 />
             </CSSTransition>
             <div className="cards-list__body">
@@ -87,11 +87,10 @@ const CardsList: FC = () => {
                                     classNames="item"
                                 >
                                     <li className="item"
-                                        onClick={(event: any) => {
+                                        onClick={(event: MouseEvent<EventTarget>) => {
                                             setActiveCard(element)
-
-                                            if (!event.target.classList.contains("card__button")
-                                            ) {
+                                            const target = event.target as HTMLElement;
+                                            if (!target.classList.contains("card__button")) {
                                                 setIsInfo(true)
                                             } else {
                                                 setIsConfirm(true)

@@ -1,8 +1,10 @@
 import React from 'react';
 import "./loading.scss"
 import {CSSTransition} from "react-transition-group";
-
-const Loading = ({isLoading}:{isLoading:boolean}) =>(
+interface props{
+    isLoading:boolean
+}
+const Loading = ({isLoading}:props) =>(
         <CSSTransition
             in={isLoading}
             classNames="loading"

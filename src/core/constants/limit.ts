@@ -1,1 +1,1 @@
-export const limit:number = 60
+export const limit = 60

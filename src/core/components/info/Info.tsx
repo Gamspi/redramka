@@ -1,23 +1,30 @@
-import React, {memo} from 'react';
+import React, {Dispatch, memo, SetStateAction} from 'react';
 import "./Info.scss"
 import {IAirline} from "../../models/IAirline";
+
+interface props {
+    activeCard: Array<IAirline>
+    isInfo: boolean
+    setIsInfo: Dispatch<SetStateAction<boolean>>
+    setIsConfirm: Dispatch<SetStateAction<boolean>>
+}
 
 const Info = ({
                   activeCard,
                   isInfo,
                   setIsInfo,
-                  setIsKonfem,
-              }: any) => {
+                  setIsConfirm
+              }: props) => {
     const handlerClose = (event: any) => {
         if (isInfo && (event.target.classList.contains("info__button-close") || !event.target.closest(".info__body"))) {
             setIsInfo(false)
 
         } else if (isInfo && (event.target.classList.contains("info__button"))) {
-            setIsKonfem(true)
+            setIsConfirm(true)
         }
     }
     if (activeCard) {
-        const [card]:Array<IAirline> = activeCard
+        const [card]: Array<IAirline> = activeCard
         return (
             <div className="info" onClick={(event) => handlerClose(event)}>
                 <div className="info__body">
