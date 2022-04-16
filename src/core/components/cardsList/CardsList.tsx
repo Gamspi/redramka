@@ -1,4 +1,4 @@
-import React, {FC, MouseEvent,useEffect, useState} from 'react';
+import React, {FC, MouseEvent, useEffect, useState} from 'react';
 import Loading from "../loading/Loading";
 import Card from "../card/Card";
 import "./CardsList.scss"
@@ -10,10 +10,11 @@ import Info from "../info/Info";
 import useFetch from "../../hooks/useFetch";
 import Confirm from "../konfem/Confirm";
 import {IPassengers} from "../../models/IPassengers";
+import {ISuccess} from "../../models/ISuccess";
 
 const CardsList: FC = () => {
     const [isConfirm, setIsConfirm] = useState(false)
-    const [success, setSuccess] = useState<Array<IPassengers>>([])
+    const [success, setSuccess] = useState<Array<ISuccess>>([])
     const [isInfo, setIsInfo] = useState(false)
     const [activeCard, setActiveCard] = useState<IPassengers>({} as IPassengers)
     const [ref, is] = useObserver()
@@ -23,21 +24,21 @@ const CardsList: FC = () => {
         (isConfirm || isInfo) ? setTheme("true") : setTheme('')
     }, [isConfirm, isInfo])
 
-     useEffect(() => {
+    useEffect(() => {
         if (is && totalPassengers > cards.length) {
             fetchData()
         }
     }, [is])
-    const handelDelete = ():void => {
+    const handelDelete = (): void => {
 
-        setSuccess((prev) => [...prev, activeCard])
+        setSuccess((prev) => [...prev, {name: activeCard.name, id: activeCard._id,}])
         setCards(cards => [...cards.filter(({_id}) => _id !== activeCard._id)])
         setIsInfo(false)
         // setTimeout(() => {
         //     setActiveCard({} as IPassengers)
         // }, 300)
         setTimeout(() => {
-            setSuccess(prev => [...prev.filter(({_id}, i, a) => _id !== a[0]._id)])
+            setSuccess(prev => [...prev.filter(({id}, i, a) => id !== a[0].id)])
         }, 1700)
     }
     return (
@@ -45,10 +46,10 @@ const CardsList: FC = () => {
             <Loading isLoading={isLoading}/>
             <div className="cards-list__success">
                 <TransitionGroup component='ul'>
-                    {success?.map(({name, _id}) => (
+                    {success?.map(({name, id}) => (
                         <CSSTransition
                             timeout={500}
-                            key={_id}
+                            key={id}
                             classNames="success"
                         >
                             <li>
