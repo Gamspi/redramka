@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import "./Success.scss"
 
-const Success = ({name}) => (
+const Success = ({name}:{name:string}) => (
             <div className="success">
                 <h1>
                     Успех

@@ -1,9 +1,10 @@
 import {useState} from "react";
 import axios from "axios";
 import {limit} from "../constants/limit";
+import {IPassengers} from "../models/IPassengers";
 
 export default function useFetch(){
-    const [cards, setCards] = useState([])
+    const [cards, setCards] = useState<Array<IPassengers>>([] )
     const [isLoading, setIsLoading] = useState(false)
     const [totalPassengers, setTotalPassengers] = useState(1)
     const [page, setPage] = useState(0)

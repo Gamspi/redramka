@@ -2,7 +2,7 @@ import React from 'react';
 import "./loading.scss"
 import {CSSTransition} from "react-transition-group";
 
-const Loading = ({isLoading}) =>(
+const Loading = ({isLoading}:{isLoading:boolean}) =>(
         <CSSTransition
             in={isLoading}
             classNames="loading"

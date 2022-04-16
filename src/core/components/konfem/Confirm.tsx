@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import "./confirm.scss"
 import {CSSTransition} from "react-transition-group";
 
-const Confirm = ({isConfirm, handelDelete, setIsConfirm }) => {
+const Confirm = ({isConfirm, handelDelete, setIsConfirm }:any) => {
     const handelSetCards = () => {
         handelDelete()
         setIsConfirm(false)

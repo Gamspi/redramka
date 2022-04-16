@@ -1,7 +1,7 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 
-export default function useObserver( options) {
-    const ref = useRef()
+export default function useObserver(options?:IntersectionObserverInit) {
+    const ref:any = useRef<HTMLElement>(null!)
     const [visible, setVisible] = useState(false)
     useEffect(() => {
             const observer = new IntersectionObserver(([entry]) => {
