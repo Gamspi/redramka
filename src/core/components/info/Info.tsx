@@ -1,4 +1,4 @@
-import React, {Dispatch, memo, SetStateAction} from 'react';
+import React, {Dispatch, memo, MouseEvent, SetStateAction} from 'react';
 import "./Info.scss"
 import {IAirline} from "../../models/IAirline";
 
@@ -15,11 +15,12 @@ const Info = ({
                   setIsInfo,
                   setIsConfirm
               }: props) => {
-    const handlerClose = (event: any) => {
-        if (isInfo && (event.target.classList.contains("info__button-close") || !event.target.closest(".info__body"))) {
+    const handlerClose = (event: MouseEvent<HTMLElement>) => {
+        const target = event.target as  HTMLElement
+        if (isInfo && (target.classList.contains("info__button-close") || !target.closest(".info__body"))) {
             setIsInfo(false)
 
-        } else if (isInfo && (event.target.classList.contains("info__button"))) {
+        } else if (isInfo && (target.classList.contains("info__button"))) {
             setIsConfirm(true)
         }
     }

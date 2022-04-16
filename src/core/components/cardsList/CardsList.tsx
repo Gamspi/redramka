@@ -87,7 +87,7 @@ const CardsList: FC = () => {
                                     classNames="item"
                                 >
                                     <li className="item"
-                                        onClick={(event: MouseEvent<EventTarget>) => {
+                                        onClick={(event: MouseEvent<HTMLLIElement>) => {
                                             setActiveCard(element)
                                             const target = event.target as HTMLElement;
                                             if (!target.classList.contains("card__button")) {
