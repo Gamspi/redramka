@@ -3,9 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: Arial, serif;
   outline: none;
   list-style-type:none;
+}
+button{
+  cursor: pointer;
 }
 body[data-fixed='true']{
   overflow: hidden;
