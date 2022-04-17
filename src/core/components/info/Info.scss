@@ -28,6 +28,18 @@
     }
   }
 
+  p, h2 {
+    margin: 5px 0;
+
+    span {
+      color: #003874;
+
+      a:visited {
+        color: inherit;
+      }
+    }
+  }
+
   button {
     position: static;
     border-radius: 20px;
