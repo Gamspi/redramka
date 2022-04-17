@@ -25,7 +25,7 @@ const Info = ({
         }
     }
     if (activeCard) {
-        const [card]: Array<IAirline> = activeCard
+        const [card] = activeCard
         return (
             <div className="info" onClick={(event) => handlerClose(event)}>
                 <div className="info__body">
