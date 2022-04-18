@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/redramka/static/css/main.937e91ca.css",
+    "main.css": "/redramka/static/css/main.72654187.css",
     "main.js": "/redramka/static/js/main.bd3f915c.js",
     "index.html": "/redramka/index.html",
-    "main.937e91ca.css.map": "/redramka/static/css/main.937e91ca.css.map",
+    "main.72654187.css.map": "/redramka/static/css/main.72654187.css.map",
     "main.bd3f915c.js.map": "/redramka/static/js/main.bd3f915c.js.map"
   },
   "entrypoints": [
-    "static/css/main.937e91ca.css",
+    "static/css/main.72654187.css",
     "static/js/main.bd3f915c.js"
   ]
 }
