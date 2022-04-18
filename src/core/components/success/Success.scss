@@ -24,7 +24,7 @@
     background: #abff5c;
     transform: rotate(45deg);
     z-index: 1;
-    box-shadow: -3px 3px 3px 1px #1b8900 inset,3px -13px 20px  #1b8900;
+    box-shadow: -3px 3px 3px 1px #1b8900 inset, 3px -13px 20px #1b8900;
 
   }
 
@@ -39,7 +39,7 @@
     background: #abff5c;
     transform: rotate(-50deg);
     z-index: 201;
-    box-shadow: -3px -3px 3px 1px #1b8900 inset,3px 13px  20px #1b8900;
+    box-shadow: -3px -3px 3px 1px #1b8900 inset, 3px 13px 20px #1b8900;
   }
 
   &-enter {
@@ -64,7 +64,6 @@
   @media(max-width: 768px) {
     & {
       font-size: 0;
-
       width: 100px;
       height: 100px;
       border-radius: 50%;
