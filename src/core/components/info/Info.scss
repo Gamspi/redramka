@@ -58,16 +58,19 @@
     &:hover {
       transform: scale(1.1, 1.1);
     }
-    &:active{
-      box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,-8px -8px 20px #a4a4a4 inset, 20px 5px 20px #ffffff  inset;
+
+    &:active {
+      box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff, -8px -8px 20px #d7d7d7 inset, 20px 5px 20px #ffffff inset;
     }
   }
-&__article{
-  margin: 10px 0;
-  border-bottom: 1px solid #b0b0b0;
-  border-top: 1px solid #b0b0b0;
 
-}
+  &__article {
+    margin: 10px 0;
+    border-bottom: 1px solid #b0b0b0;
+    border-top: 1px solid #b0b0b0;
+
+  }
+
   .info__button-close {
     position: absolute;
     right: 0;
