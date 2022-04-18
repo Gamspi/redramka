@@ -1,7 +1,7 @@
 .cards-list {
   min-height: 100%;
   transition: all 500ms;
-  padding: 10px 0;
+  padding: 20px 0;
   &__body {
     margin: 0 -10px;
     @media (max-width: 360px) {
@@ -23,7 +23,7 @@
       z-index: 100;
 
       li {
-        margin: 10px 0 10px 0;
+        margin: 15px 0 15px 0;
       }
     }
 

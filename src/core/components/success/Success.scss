@@ -2,8 +2,11 @@
   padding: 30px;
   background: #37ff00;
   border-radius: 20px;
-  color: white;
-  box-shadow: 0 0 5px 3px #06ff00,-10px -10px 10px 2px #06f100 inset ;
+  color: #ffffff;
+  text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #b7b7b7;
+  background: linear-gradient(118.38deg, #06ff00 -4.6%, #bffb83 200.44%);
+  box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,;
+
   position: relative;
 
   h1 {
@@ -18,9 +21,11 @@
     width: 50px;
     height: 20px;
     border-radius: 10px 0 10px 10px;
-    background: #a2ff46;
+    background: #abff5c;
     transform: rotate(45deg);
     z-index: 1;
+    box-shadow: -3px 3px 3px 1px #1b8900 inset,3px -13px 20px  #1b8900;
+
   }
 
   &:before {
@@ -31,9 +36,10 @@
     width: 100px;
     height: 20px;
     border-radius: 10px 10px 10px 10px;
-    background: #a2ff46;
+    background: #abff5c;
     transform: rotate(-50deg);
     z-index: 201;
+    box-shadow: -3px -3px 3px 1px #1b8900 inset,3px 13px  20px #1b8900;
   }
 
   &-enter {

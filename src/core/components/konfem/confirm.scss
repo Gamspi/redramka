@@ -8,20 +8,21 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  background: linear-gradient(118.38deg, rgba(215,215,215,0.7) -4.6%, rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(5px);
 
   &__body {
-    background: #ffffff;
     max-width: 400px;
-    border: 2px solid #007cff;
     min-height: 100px;
     padding: 20px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0 0 20px 1px #000e56;
+    background: linear-gradient(118.38deg, #d7d7d7 -4.6%, #ffffff);
+    border-radius: 20px;
+    box-shadow: -8px -8px 20px #748394, 15px 15px 20px #ffffff;
+
   }
 
   &__buttons {
@@ -31,18 +32,18 @@
       margin: 10px;
       width: 55px;
       height: 40px;
-      background: #78ffe6;
       border: none;
       border-radius: 20px;
       transition: all 200ms linear;
-      box-shadow: 0 0 10px 7px #ffffff inset;
+      background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 200.44%);
+      box-shadow: -8px -8px 20px #748394, 10px 10px 20px #ffffff;
 
       &:disabled:hover {
-        box-shadow: 0 0 10px 7px #ffffff inset;
       }
 
       &:hover {
-        box-shadow: 0 0 5px 3px #007cff inset, 0 0 10px 7px #007cff;
+        transform: scale(1.1, 1.1);
+
       }
     }
   }

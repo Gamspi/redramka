@@ -8,28 +8,29 @@
   justify-content: center;
   align-items: center;
   z-index: 50;
-
+  background: linear-gradient(118.38deg, rgba(215,215,215,0.7) -4.6%, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(5px);
 
   &__body {
     position: relative;
     min-width: 300px;
     min-height: 200px;
-
-    background: #ffffff;
-    border: 2px solid #007cff;
+    background: linear-gradient(118.38deg, #d7d7d7 -4.6%, #ffffff);
     border-radius: 20px;
+    box-shadow: -8px -8px 20px #748394, 15px 15px 20px #ffffff;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 30px 2px #007cff;
 
     img {
-      max-height: 330px;
+      max-height: 250px;
+      margin: 10px 0;
+      object-fit: cover;
     }
   }
 
   p, h2 {
-    margin: 5px 0;
+    margin: 10px 0;
 
     span {
       color: #003874;
@@ -38,63 +39,63 @@
         color: inherit;
       }
     }
+
   }
 
   button {
     position: static;
     border-radius: 20px;
-    width: 70px;
+    width: 100px;
     height: 35px;
     margin: 10px;
     align-self: end;
-    background: #ffa5a5;
     transition: all 200ms linear;
     border: none;
-    box-shadow: -3px -5px 10px 2px #ff0010 inset;
+    background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 200.44%);
+    box-shadow: -8px -8px 20px #748394, 10px 10px 20px #ffffff;
     color: #b90000;
 
     &:hover {
-      box-shadow: 3px 5px 10px 2px #ff0010 inset, 0 0 10px 1px #ff0010;
       transform: scale(1.1, 1.1);
-
     }
   }
+&__article{
+  margin: 10px 0;
+  border-bottom: 1px solid #b0b0b0;
+  border-top: 1px solid #b0b0b0;
 
+}
   .info__button-close {
     position: absolute;
     right: 0;
     top: 0;
     width: 35px;
-    transition: all 1100ms;
-    box-shadow: -3px -5px 10px 2px #ff0010 inset;
-    color: #b90000;
 
     &:hover {
-      box-shadow: 3px 5px 10px 2px #ff0010 inset, 0 0 10px 1px #ff0010;
       transform: scale(1.1, 1.1);
-      font-size: 1.2em;
     }
 
   }
 
   &-enter {
+    opacity: 0;
 
-    transform: translateX(1000px);
+    transition: all 1000ms;
   }
 
   &-enter-active {
-
+    opacity: 1;
     transition: all 1000ms;
-    transform: translateX(0);
+
 
   }
 
   &-exit {
-    transform: translateY(0);
+    opacity: 1;
   }
 
   &-exit-active {
-    transform: translateY(-1500px);
+    opacity: 0;
     transition: all 1000ms;
   }
 }

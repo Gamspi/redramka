@@ -15,16 +15,23 @@
     justify-content: center;
     align-items: center;
 
-    &:after {
+    &:after,&:before{
       position: absolute;
       content: "";
       width: 200px;
       height: 200px;
-      border: 2px solid black;
       border-radius: 50%;
-      border-top: none;
+
+    }
+    &:after{
       animation: loading 1s linear infinite;
-      box-shadow: 0 0 20px 50px #ffffff,0 0 20px 50px #ffffff inset;
+      border: 2px solid black;
+      border-top: none;
+
+    }
+    &:before{
+      background: #dadada;
+      box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,-8px -8px 20px #748394  inset, 10px 7px 20px #ffffff  inset,0 0 80px 80px #dadada;
     }
 
     p {
@@ -32,7 +39,8 @@
       font-size: 35px;
       color: #002aff;
       z-index: 100;
-      text-shadow: 0 0 10px #000e56;
+      text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #ffffff;
+
     }
 
 

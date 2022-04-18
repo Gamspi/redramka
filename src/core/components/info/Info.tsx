@@ -30,12 +30,14 @@ const Info = ({
             <div className="info" onClick={(event) => handlerClose(event)}>
                 <div className="info__body">
                     <img src={card.logo} alt={card.name}/>
-                    <h2>Name: <span>{card.name}</span> </h2>
-                    <p>Country: <span>{card.country}</span></p>
-                    <p>Established: <span>{card.established}</span></p>
-                    <p>Slogan: <span>{card.slogan}</span></p>
-                    <p>Head quaters: <span>{card.head_quaters}</span></p>
-                    <p>Website: <span><a href={card.website}>{card.website}</a></span></p>
+                    <article className="info__article">
+                        <h2>Name: <span>{card.name}</span> </h2>
+                        <p>Country: <span>{card.country}</span></p>
+                        <p>Established: <span>{card.established}</span></p>
+                        <p>Slogan: <span>{card.slogan}</span></p>
+                        <p>Head quaters: <span>{card.head_quaters}</span></p>
+                        <p>Website: <span><a href={card.website}>{card.website}</a></span></p>
+                    </article>
                     <button className="info__button">Удалить</button>
                     <button className="info__button-close">&#10008;</button>
                 </div>

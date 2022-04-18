@@ -1,23 +1,23 @@
 .card {
   position: relative;
-  border: 1px solid #007cff;
   border-radius: 20px;
   min-width: 350px;
   min-height: 100px;
   padding: 15px;
-  background: #ffffff;
   transition: all 200ms linear;
   cursor: pointer;
   display: flex;
   align-items: start;
   justify-content: space-between;
-  box-shadow: 0 0 0 0 #007cff inset, 0 0 10px #000e56;
-
+  color: #2a2a2a;
+  text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #ffffff;
+  background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 200.44%);
+  box-shadow: -8px -8px 20px #748394, 10px 7px 20px  #ffffff;
   @media (max-width: 380px) {
     min-width: 300px;
   }
+
   &:hover {
-    box-shadow: -2px -2px 10px 3px #007cff inset, 0 0 15px 5px #007cff;
     transform: scale(1.05, 1.05);
     z-index: 2;
 
@@ -25,27 +25,34 @@
       transform: scale(1.02, 1.05);
 
     }
+
+    &:active {
+      background: none;
+    }
   }
 
   button {
     position: absolute;
     right: 10px;
     top: 10px;
-    background: #ffa5a5;
+    background: linear-gradient(118.38deg, #d7d7d7 -4.6%, #ffffff 200.44%);
     border: none;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     transition: all 200ms linear;
-    color: #b90000;
-    box-shadow: -3px -5px 10px 2px #ff0010 inset;
+    color: #ff0000;
+    box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff;
 
     &:hover {
-      box-shadow: 3px 5px 10px 2px #ff0010 inset, 0 0 10px 1px #ff0010;
       transform: scale(1.1, 1.1);
 
     }
 
+    &:active {
+      transform: scale(1, 1);
+
+    }
 
   }
 
