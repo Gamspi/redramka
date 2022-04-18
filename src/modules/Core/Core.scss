@@ -1,0 +1,18 @@
+@import "styles/main";
+@import "styles/mixins";
+
+.core {
+  @include flexbox();
+  @include flex-direction(column);
+  @include flex(1);
+  background: linear-gradient(90deg, #d1d1d1 0%, #ffffff 100%);
+
+  &__wrapper {
+    @include flex(1, 0);
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+
