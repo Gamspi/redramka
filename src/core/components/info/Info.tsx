@@ -38,7 +38,7 @@ const Info = ({
                         <p>Head quaters: <span>{card.head_quaters}</span></p>
                         <p>Website: <span><a href={card.website}>{card.website}</a></span></p>
                     </article>
-                    <button className="info__button">Удалить</button>
+                    <button className="info__button">Delete</button>
                     <button className="info__button-close">&#10008;</button>
                 </div>
             </div>

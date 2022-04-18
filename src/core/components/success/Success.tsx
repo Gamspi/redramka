@@ -6,9 +6,9 @@ interface props{
 const Success = ({name}:props) => (
             <div className="success">
                 <h1>
-                    Успех
+                    Success
                 </h1>
-                <p>Вы успешно удалили карточку</p>
+                <p>You have successfully deleted the card</p>
                 <p>{name}</p>
             </div>
     );

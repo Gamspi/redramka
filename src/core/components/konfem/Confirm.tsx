@@ -24,12 +24,13 @@ const Confirm = ({isConfirm, handelDelete, setIsConfirm}: props) => {
         >
             <div className="confirm">
                 <div className="confirm__body">
-                    <p>Вы уверенны, что хотите удалить карточку?</p>
+                    <p>Are you sure you want to delete the card?</p>
                     <div className="confirm__buttons">
-                        <button onClick={handelSetCards} disabled={!isConfirm}>Да</button>
+                        <button onClick={handelSetCards} disabled={!isConfirm}>
+                            Yes</button>
                         <button onClick={() => {
                             setIsConfirm(false)
-                        }} disabled={!isConfirm}>Нет
+                        }} disabled={!isConfirm}>No
                         </button>
                     </div>
                 </div>
