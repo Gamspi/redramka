@@ -277,7 +277,7 @@
 }
 
 
-@mixin button-close($text-color:#ff0000,$color1: #d7d7d7,$color2: #ffffff,$color3: #8d8d8d,$color4: #ffffff) {
+@mixin button-close($text-color:#ff0000,$color1: #d7d7d7,$color2: #ffffff,$color3: #8d8d8d,) {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -288,7 +288,7 @@
   height: 30px;
   transition: all 200ms linear;
   color: $text-color;
-  box-shadow: -8px -8px 20px $color3, 10px 7px 20px $color4;
+    box-shadow: -8px -8px 20px $color3, 10px 7px 20px $color1;
 
   &:hover {
     transform: scale(1.1, 1.1);
@@ -297,7 +297,7 @@
 
   &:active {
     transform: scale(1, 1);
-    box-shadow: -8px -8px 20px $color3, 10px 7px 20px $color4, -8px -8px 20px $color3 inset, 20px 5px 20px $color4 inset;
+    box-shadow: -8px -8px 20px $color3, 10px 7px 20px $color1, -5px -5px 7px $color3 inset, 20px 5px 20px $color1 inset;
   }
 
 

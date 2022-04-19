@@ -22,6 +22,12 @@
     text-shadow: 0 0 10px #000e56;
     transition: transform 500ms;
 
+a{
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
     &:after {
       content: "";
       position: absolute;

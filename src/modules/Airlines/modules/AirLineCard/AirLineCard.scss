@@ -1,3 +1,4 @@
+@import "../../../Core/styles/mixins";
 .info {
   position: fixed;
   top: 0;
@@ -8,9 +9,8 @@
   justify-content: center;
   align-items: center;
   z-index: 50;
-  background: linear-gradient(118.38deg, rgba(215,215,215,0.7) -4.6%, rgba(255, 255, 255, 0.7));
+  background: linear-gradient(118.38deg, rgba(215,215,215,0.7) , rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(5px);
-
   &__body {
     position: relative;
     min-width: 300px;
@@ -80,26 +80,24 @@
     &:hover {
       transform: scale(1.1, 1.1);
     }
+    @include button-close()
+
 
   }
 
   &-enter {
     opacity: 0;
-
-    transition: all 1000ms;
+    transition: opacity 1000ms;
   }
 
   &-enter-active {
     opacity: 1;
-    transition: all 1000ms;
-
-
+    transition: opacity 1000ms;
   }
 
   &-exit {
     opacity: 1;
-    transition: all 1000ms;
-
+    transition: opacity 1000ms;
   }
 
   &-exit-active {

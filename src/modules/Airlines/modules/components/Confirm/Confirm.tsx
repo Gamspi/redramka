@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Confirm.scss';
 import {CSSTransition} from 'react-transition-group';
 import {useTypeSelector} from "../../../../Core/hooks/useTypeSelector";
 import {useAction} from "../../../../Core/hooks/useAction";
 import {useNavigate, useParams} from "react-router-dom";
+import useTheme from "../../../../Core/hooks/useTheme";
 
 
 const Confirm:React.FC = () => {
@@ -11,6 +12,10 @@ const Confirm:React.FC = () => {
   const{setIsConfirm,deleteCardFunction}=useAction()
   const {id} = useParams()
   const navigate = useNavigate()
+  const [setTheme] = useTheme('fixed');
+  useEffect(() => {
+    isConfirm ? setTheme('true') : setTheme('');
+  }, [isConfirm]);
   const handelSetCards = () => {
 
 

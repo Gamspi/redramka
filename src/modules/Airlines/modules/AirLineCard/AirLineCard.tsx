@@ -1,19 +1,19 @@
 import React from 'react';
 import "./AirLineCard.scss"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Navigate} from "react-router-dom";
 import Confirm from "../components/Confirm/Confirm";
 import {useAction} from "../../../Core/hooks/useAction";
 import {useTypeSelector} from "../../../Core/hooks/useTypeSelector";
-import NotFoundPage from "../../../Core/components/NotFoundPage/NotFoundPage";
 
 /**
  * Карточка авиалинни
  */
 const AirLineCard: React.FC = () => {
-    const {cards,activeCardId} = useTypeSelector(state => state.cards)
+    const {cards, activeCardId} = useTypeSelector(state => state.cards)
     const navigate = useNavigate()
     const {setIsConfirm} = useAction()
-    if(cards.find(({_id}) => _id === activeCardId)){
+
+    if (cards.find(({_id}) => _id === activeCardId)) {
         const [card] = cards.find(({_id}) => _id === activeCardId)!.airline
 
         return (
@@ -38,7 +38,7 @@ const AirLineCard: React.FC = () => {
             </div>
         )
     }
-    return <NotFoundPage/>
+    return <Navigate to="/redramka"/>
 
 }
 

@@ -1,6 +1,4 @@
-import React, {MouseEvent, useEffect} from 'react';
-import useObserver from "../../../Core/hooks/useObserver";
-import useTheme from "../../../Core/hooks/useTheme";
+import React, {MouseEvent} from 'react';
 import Loading from "./components/loading/Loading";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import Success from "./components/success/Success";
@@ -16,30 +14,15 @@ import {Outlet, useParams} from 'react-router-dom';
  * Страница со списком авиалиний
  */
 const PassengersList: React.FC = () => {
-        const [ref, is] = useObserver();
-        const [setTheme] = useTheme('fixed');
         const {id} = useParams()
 
         const {
-            totalPassengers,
             isLoading,
-            cards,
-            page,
-            activeCardId,
-            isConfirm
+            cards
         } = useTypeSelector(state => state.cards)
-    console.log(isConfirm)
-        const {downloadCards, setId, setIsConfirm} = useAction()
-        useEffect(() => {
-            isConfirm ? setTheme('true') : setTheme('');
-        }, [isConfirm]);
-        useEffect(() => {
-            if (is && totalPassengers > cards.length) {
-                downloadCards(page)
-            }
-        }, [is]);
-        useEffect(() => {
-        }, [activeCardId])
+        const {setId, setIsConfirm} = useAction()
+
+
 
         return (
 
@@ -68,17 +51,14 @@ const PassengersList: React.FC = () => {
                         ))}
                     </TransitionGroup>
                 </div>
-                    <CSSTransition
-                        timeout={1000}
-                        classNames="info"
-                        in={!!id}
-                    >
-                        <Outlet/>
-                    </CSSTransition>
-                    ))
+                <CSSTransition
+                    timeout={1000}
+                    classNames="info"
+                    in={!!id}
+                >
+                    <Outlet/>
+                </CSSTransition>
 
-
-                <div ref={ref}/>
             </div>
 
 
