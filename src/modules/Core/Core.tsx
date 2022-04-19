@@ -13,17 +13,17 @@ import MainLayout from './layouts/MainLayout';
  * Ядро
  */
 const Core: React.FC = () => (
-  <BrowserRouter>
-    <Provider store={store}>
-      <div className="core">
-        <Header />
-        <div className="core__wrapper">
-          <MainLayout />
-        </div>
-        <Footer />
-      </div>
-    </Provider>
-  </BrowserRouter>
+    <BrowserRouter>
+        <Provider store={store}>
+            <div className="core">
+                <Header/>
+                <div className="core__wrapper">
+                    <MainLayout/>
+                </div>
+                <Footer/>
+            </div>
+        </Provider>
+    </BrowserRouter>
 );
 
 export default React.memo(Core);

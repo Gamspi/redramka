@@ -1,31 +1,24 @@
-import React, {Dispatch, memo, MouseEvent, SetStateAction} from 'react';
+import React, { MouseEvent} from 'react';
 import "./Info.scss"
-import {IAirline} from "../../models/IAirline";
+import {useAction} from "../../hooks/useAction";
+import {useTypeSelector} from "../../hooks/useTypeSelector";
 
-interface props {
-    activeCard: Array<IAirline>
-    isInfo: boolean
-    setIsInfo: Dispatch<SetStateAction<boolean>>
-    setIsConfirm: Dispatch<SetStateAction<boolean>>
-}
 
-const Info = ({
-                  activeCard,
-                  isInfo,
-                  setIsInfo,
-                  setIsConfirm
-              }: props) => {
+const Info = () => {
+    const {activeCardId,cards}=useTypeSelector(state => state.cards)
+    const{setIsConfirm}=useAction()
     const handlerClose = (event: MouseEvent<HTMLElement>) => {
         const target = event.target as  HTMLElement
-        if (isInfo && (target.classList.contains("info__button-close") || !target.closest(".info__body"))) {
-            setIsInfo(false)
+        if ((target.classList.contains("info__button-close") || !target.closest(".info__body"))) {
+            // setIsInfo(false)
 
-        } else if (isInfo && (target.classList.contains("info__button"))) {
+        } else if ((target.classList.contains("info__button"))) {
             setIsConfirm(true)
         }
     }
-    if (activeCard) {
-        const [card] = activeCard
+    if (activeCardId) {
+        const [card] = cards.find(({_id:id})=>id===activeCardId)!.airline
+        console.log(true)
         return (
             <div className="info" onClick={(event) => handlerClose(event)}>
                 <div className="info__body">
@@ -47,4 +40,4 @@ const Info = ({
     return null
 };
 
-export default memo(Info);
+export default React.memo(Info);

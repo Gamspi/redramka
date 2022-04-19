@@ -1,19 +1,26 @@
-import React, {Dispatch, memo, SetStateAction} from 'react';
+import React from 'react';
 import './confirm.scss';
 import {CSSTransition} from 'react-transition-group';
+import {useTypeSelector} from "../../hooks/useTypeSelector";
+import {useAction} from "../../hooks/useAction";
+import {useNavigate, useParams} from "react-router-dom";
 
-interface props {
-  isConfirm: boolean;
-  handelDelete: Function;
-  setIsConfirm: Dispatch<SetStateAction<boolean>>;
-}
 
-const Confirm = ({isConfirm, handelDelete, setIsConfirm}: props) => {
+const Confirm:React.FC = () => {
+  const{isConfirm,activeCardId}=useTypeSelector(state => state.cards)
+  const{setIsConfirm,deleteCardFunction}=useAction()
+  const {id} = useParams()
+  const navigate = useNavigate()
   const handelSetCards = () => {
-    handelDelete();
-    setIsConfirm(false);
-  };
 
+
+    deleteCardFunction(activeCardId)
+    setIsConfirm(false);
+    if(id){
+      navigate(-1)
+    }
+
+  };
   return (
     <CSSTransition in={isConfirm} timeout={500} classNames="confirm" unmountOnExit mountOnEnter>
       <div className="confirm">
@@ -38,4 +45,4 @@ const Confirm = ({isConfirm, handelDelete, setIsConfirm}: props) => {
   );
 };
 
-export default memo(Confirm, (prevProps, nextProps) => !prevProps.isConfirm !== nextProps.isConfirm);
+export default React.memo(Confirm);

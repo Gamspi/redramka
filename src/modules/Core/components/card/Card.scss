@@ -1,18 +1,23 @@
+@import "../../styles/mixins";
 .card {
   position: relative;
-  border-radius: 20px;
-  min-width: 350px;
-  min-height: 100px;
-  padding: 15px;
   transition: all 200ms linear;
-  cursor: pointer;
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  color: #2a2a2a;
-  text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #ffffff;
-  background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 100%);
-  box-shadow: -8px -8px 20px #748394, 10px 7px 20px  #ffffff;
+  &__body{
+    border-radius: 20px;
+    min-width: 350px;
+    min-height: 100px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    color: #2a2a2a;
+    text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #ffffff;
+    background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 100%);
+    box-shadow: -8px -8px 20px #748394, 10px 7px 20px  #ffffff;
+
+
+  }
   @media (max-width: 380px) {
     min-width: 300px;
   }
@@ -30,31 +35,10 @@
       background: none;
     }
   }
+button{
+  @include button-close();
 
-  button {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background: linear-gradient(118.38deg, #d7d7d7 0%, #ffffff 100%);
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    transition: all 200ms linear;
-    color: #ff0000;
-    box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff;
-
-    &:hover {
-      transform: scale(1.1, 1.1);
-
-    }
-
-    &:active {
-      transform: scale(1, 1);
-        box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,-8px -8px 20px #a4a4a4 inset, 20px 5px 20px #ffffff  inset;
-    }
-
-  }
+}
 
   &__info {
     h2 {

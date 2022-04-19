@@ -1,14 +1,35 @@
 import React, {memo} from 'react';
 import './Success.scss';
-interface props {
-  name: string;
+import {CSSTransition} from 'react-transition-group';
+import {useTypeSelector} from "../../hooks/useTypeSelector";
+import {useAction} from "../../hooks/useAction";
+
+
+
+const Success = () => {
+    const {isSuccess} =useTypeSelector(state => state.cards)
+const {setIsSuccess}=useAction()
+
+    return (
+        <CSSTransition
+            in={isSuccess}
+            timeout={500}
+            classNames="success"
+            unmountOnExit
+            mountOnEnter>
+
+            <div
+                className="success"
+                onClick={()=>{
+                    setIsSuccess(false)
+                }}
+            >
+                <h1>Success</h1>
+                <p>You have successfully deleted the card</p>
+            </div>
+        </CSSTransition>
+
+    );
 }
-const Success = ({name}: props) => (
-  <div className="success">
-    <h1>Success</h1>
-    <p>You have successfully deleted the card</p>
-    <p>{name}</p>
-  </div>
-);
 
 export default memo(Success);

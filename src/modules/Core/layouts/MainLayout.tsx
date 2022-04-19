@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
+import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 
 const Airlines = React.lazy(() => import('../../Airlines/Airlines'));
 
@@ -8,6 +9,7 @@ const Airlines = React.lazy(() => import('../../Airlines/Airlines'));
  */
 const MainLayout: React.FC = () => (
   <Routes>
+
     <Route
       path="/*"
       element={
@@ -16,8 +18,8 @@ const MainLayout: React.FC = () => (
         </Suspense>
       }
     />
-    {/* TODO Допилить страницу 404  */}
-    <Route path="*" element={<div>NotFoundPage</div>} />
+    {/* TODO Допилить страницу NotFoundPage  */}
+    <Route path="*" element={<NotFoundPage/>} />
   </Routes>
 );
 

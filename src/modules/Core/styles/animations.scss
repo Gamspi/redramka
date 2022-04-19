@@ -21,3 +21,12 @@
     transform: translate(0px, 0px) rotate(-30deg) scale(0.8, 0.8);
   }
 }
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
