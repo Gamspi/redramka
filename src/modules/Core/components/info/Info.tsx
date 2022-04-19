@@ -2,16 +2,18 @@ import React, { MouseEvent} from 'react';
 import "./Info.scss"
 import {useAction} from "../../hooks/useAction";
 import {useTypeSelector} from "../../hooks/useTypeSelector";
+import {useNavigate} from "react-router-dom";
 
 
 const Info = () => {
+    const navigate = useNavigate()
     const {activeCardId,cards}=useTypeSelector(state => state.cards)
     const{setIsConfirm}=useAction()
     const handlerClose = (event: MouseEvent<HTMLElement>) => {
         const target = event.target as  HTMLElement
         if ((target.classList.contains("info__button-close") || !target.closest(".info__body"))) {
             // setIsInfo(false)
-
+            navigate(-1)
         } else if ((target.classList.contains("info__button"))) {
             setIsConfirm(true)
         }

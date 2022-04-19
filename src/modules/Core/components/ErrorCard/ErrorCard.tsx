@@ -17,7 +17,7 @@ const ErrorCard: React.FC = () => {
                         Error
                     </h2>
                     <div className="error-card__title">
-                        Произошла какая-то ошибка
+                        Some error has occurred
                     </div>
                     <button className="error-card__button" onClick={() => setIsError(false)}>
                         &#10008;

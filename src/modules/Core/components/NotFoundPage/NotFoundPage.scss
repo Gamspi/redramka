@@ -1,14 +1,23 @@
 @import "../../styles/mixins";
-.not-found-page{
+
+.not-found-page {
   height: 100%;
   @include flexbox;
   @include flex-direction(column);
   @include justify-content(center);
   @include align-items(center);
-  &__title{
+
+  &__title {
     font-size: 150px;
   }
-  &__text{
+
+  &__text {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+
+
     font-size: 40px;
   }
 }

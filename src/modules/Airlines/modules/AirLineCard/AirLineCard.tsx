@@ -31,7 +31,8 @@ const AirLineCard: React.FC = () => {
                     </article>
                     <button className="info__button" onClick={() => {
                         setIsConfirm(true)
-                    }}>Delete</button>
+                    }}>Delete
+                    </button>
                     <button className="info__button-close" onClick={() => navigate(-1)}>&#10008;</button>
                 </div>
             </div>
