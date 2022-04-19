@@ -1,8 +1,8 @@
 import React from 'react';
 import "./ErrorCard.scss"
-import {useAction} from "../../hooks/useAction";
+import {useAction} from "../../../../../Core/hooks/useAction";
 import {CSSTransition} from 'react-transition-group';
-import {useTypeSelector} from "../../hooks/useTypeSelector";
+import {useTypeSelector} from "../../../../../Core/hooks/useTypeSelector";
 
 
 const ErrorCard: React.FC = () => {

@@ -3,7 +3,7 @@ import './Card.scss';
 
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useAction} from "../../hooks/useAction";
+import {useAction} from "../../../../../Core/hooks/useAction";
 
 
 interface props {
@@ -18,7 +18,7 @@ const Card = ({name, trips, id}: props) => {
     return (
             <div className="card">
 
-                <Link to={`card/${id}`}>
+                <Link style={{ textDecoration: 'none' }} to={`card/${id}`}>
                     <div className="card__body">
                         <div className="card__info">
                             <h2>Name: {name}</h2>
@@ -31,8 +31,6 @@ const Card = ({name, trips, id}: props) => {
 
                 <button className="card__button" onClick={() => setIsConfirm(true)}>&#10008;</button>
             </div>
-
-
     )
 };
 

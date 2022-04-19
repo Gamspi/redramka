@@ -98,10 +98,11 @@
 
   &-exit {
     opacity: 1;
+    transition: all 1000ms;
+
   }
 
   &-exit-active {
     opacity: 0;
-    transition: all 1000ms;
   }
 }

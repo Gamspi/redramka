@@ -1,16 +1,16 @@
 import React, {MouseEvent, useEffect} from 'react';
 import useObserver from "../../../Core/hooks/useObserver";
 import useTheme from "../../../Core/hooks/useTheme";
-import Loading from "../../../Core/components/loading/Loading";
+import Loading from "./components/loading/Loading";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import Success from "../../../Core/components/success/Success";
-import Confirm from "../../../Core/components/konfem/Confirm";
-import Card from "../../../Core/components/card/Card";
+import Success from "./components/success/Success";
+import Confirm from "../components/Confirm/Confirm";
+import Card from "./components/card/Card";
 import {useTypeSelector} from "../../../Core/hooks/useTypeSelector";
 import {useAction} from "../../../Core/hooks/useAction";
 import "./CardsList.scss"
-import ErrorCard from "../../../Core/components/ErrorCard/ErrorCard";
-import {Outlet} from 'react-router-dom';
+import ErrorCard from "./components/ErrorCard/ErrorCard";
+import {Outlet, useParams} from 'react-router-dom';
 
 /**
  * Страница со списком авиалиний
@@ -18,6 +18,7 @@ import {Outlet} from 'react-router-dom';
 const PassengersList: React.FC = () => {
         const [ref, is] = useObserver();
         const [setTheme] = useTheme('fixed');
+        const {id} = useParams()
 
         const {
             totalPassengers,
@@ -27,6 +28,7 @@ const PassengersList: React.FC = () => {
             activeCardId,
             isConfirm
         } = useTypeSelector(state => state.cards)
+    console.log(isConfirm)
         const {downloadCards, setId, setIsConfirm} = useAction()
         useEffect(() => {
             isConfirm ? setTheme('true') : setTheme('');
@@ -40,42 +42,46 @@ const PassengersList: React.FC = () => {
         }, [activeCardId])
 
         return (
-            <>
-                <div className="cards-list">
-                    <ErrorCard/>
-                    <Loading isLoading={isLoading}/>
-                    <Success/>
-                    <Confirm/>
-                    <div className="cards-list__body">
-                        <TransitionGroup component="ul">
-                            {cards.map(({_id: id, trips, name}) => (
-                                <CSSTransition timeout={500} key={id} classNames="item">
-                                    <li
-                                        className="item"
-                                        onClick={(event: MouseEvent<HTMLLIElement>) => {
-                                            setId(id);
-                                            const target = event.target as HTMLElement;
-                                            if (!target.classList.contains('card__button')) {
-                                                // setIsInfo(true);
-                                            } else {
-                                                setIsConfirm(true);
-                                            }
-                                        }}
-                                    >
-                                        <Card id={id} trips={trips} name={name}/>
-                                    </li>
-                                </CSSTransition>
-                            ))}
-                        </TransitionGroup>
-                    </div>
 
-
-                    <Outlet/>
-
-                    <div ref={ref}/>
+            <div className="cards-list">
+                <ErrorCard/>
+                <Loading isLoading={isLoading}/>
+                <Success/>
+                <Confirm/>
+                <div className="cards-list__body">
+                    <TransitionGroup component="ul">
+                        {cards.map(({_id: id, trips, name}) => (
+                            <CSSTransition timeout={500} key={id} classNames="item">
+                                <li
+                                    className="item"
+                                    onClick={(event: MouseEvent<HTMLLIElement>) => {
+                                        setId(id);
+                                        const target = event.target as HTMLElement;
+                                        if (target.classList.contains('card__button')) {
+                                            setIsConfirm(true);
+                                        }
+                                    }}
+                                >
+                                    <Card id={id} trips={trips} name={name}/>
+                                </li>
+                            </CSSTransition>
+                        ))}
+                    </TransitionGroup>
                 </div>
+                    <CSSTransition
+                        timeout={1000}
+                        classNames="info"
+                        in={!!id}
+                    >
+                        <Outlet/>
+                    </CSSTransition>
+                    ))
 
-            </>
+
+                <div ref={ref}/>
+            </div>
+
+
         );
     }
 ;

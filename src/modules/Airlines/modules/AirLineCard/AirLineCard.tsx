@@ -1,22 +1,22 @@
 import React from 'react';
 import "./AirLineCard.scss"
-import {CSSTransition} from 'react-transition-group';
-import {useNavigate, useParams} from "react-router-dom";
-import Confirm from "../../../Core/components/konfem/Confirm";
+import {useNavigate} from "react-router-dom";
+import Confirm from "../components/Confirm/Confirm";
 import {useAction} from "../../../Core/hooks/useAction";
 import {useTypeSelector} from "../../../Core/hooks/useTypeSelector";
+import NotFoundPage from "../../../Core/components/NotFoundPage/NotFoundPage";
 
 /**
  * Карточка авиалинни
  */
 const AirLineCard: React.FC = () => {
-    const {cards} = useTypeSelector(state => state.cards)
+    const {cards,activeCardId} = useTypeSelector(state => state.cards)
     const navigate = useNavigate()
     const {setIsConfirm} = useAction()
-    const {id} = useParams()
-    const [card] = cards.find(({_id}) => _id === id)!.airline
-    return (
-        <CSSTransition timeout={500} classNames="confirm">
+    if(cards.find(({_id}) => _id === activeCardId)){
+        const [card] = cards.find(({_id}) => _id === activeCardId)!.airline
+
+        return (
             <div className="info">
                 <Confirm/>
                 <div className="info__body">
@@ -36,8 +36,10 @@ const AirLineCard: React.FC = () => {
                     <button className="info__button-close" onClick={() => navigate(-1)}>&#10008;</button>
                 </div>
             </div>
-        </CSSTransition>
-    )
+        )
+    }
+    return <NotFoundPage/>
+
 }
 
 export default React.memo(AirLineCard);

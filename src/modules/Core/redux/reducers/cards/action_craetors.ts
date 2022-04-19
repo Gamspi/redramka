@@ -56,7 +56,7 @@ export const CardsActionCreators = {
     },
     deleteCardFunction: (id: string) => async (dispatch: appDispatch) => {
         dispatch(CardsActionCreators.setIsSuccess(false))
-        await axios.delete(`https://api.instantwe btools.net/v1/passenger/${id}`)
+        await axios.delete(`https://api.instantwebtools.net/v1/passenger/${id}`)
             .then(() => {
                 dispatch(CardsActionCreators.deleteCard(id))
             })
@@ -67,9 +67,7 @@ export const CardsActionCreators = {
                 console.log(error)
                 dispatch(CardsActionCreators.setIsError(true))
             })
-            .finally(() => {
 
-            })
     }
 }
 

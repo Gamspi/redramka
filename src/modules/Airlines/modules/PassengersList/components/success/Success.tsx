@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import './Success.scss';
 import {CSSTransition} from 'react-transition-group';
-import {useTypeSelector} from "../../hooks/useTypeSelector";
-import {useAction} from "../../hooks/useAction";
+import {useTypeSelector} from "../../../../../Core/hooks/useTypeSelector";
+import {useAction} from "../../../../../Core/hooks/useAction";
 
 
 
