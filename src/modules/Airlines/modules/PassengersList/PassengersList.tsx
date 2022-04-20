@@ -35,13 +35,9 @@ const PassengersList: React.FC = () => {
             <CSSTransition timeout={500} key={id} classNames="item">
               <li
                 className="item"
-                onClick={(event: MouseEvent<HTMLLIElement>) => {
-                  setId(id);
-                  const target = event.target as HTMLElement;
-                  if (target.classList.contains('card__button')) {
-                    setIsConfirm(true);
-                  }
-                }}
+                onClick={()=> setId(id)}
+
+
               >
                 <Card id={id} trips={trips} name={name} />
               </li>

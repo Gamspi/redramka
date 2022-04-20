@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import './AirLineCard.scss';
 import {useNavigate, Navigate} from 'react-router-dom';
 import {useAction} from '../../../Core/hooks/useAction';
@@ -14,9 +14,14 @@ const AirLineCard: React.FC = () => {
 
   if (cards.find(({_id}) => _id === activeCardId)) {
     const [card] = cards.find(({_id}) => _id === activeCardId)!.airline;
-
+    const handelClouse = (event: MouseEvent<HTMLElement>) => {
+      const target = event.target as HTMLElement;
+      if (target.classList.contains('info__button-close') || !target.closest('.info__body')) {
+        navigate(-1);
+      }
+    };
     return (
-      <div className="info">
+      <div className="info" onClick={handelClouse}>
         <div className="info__body">
           <img src={card.logo} alt={card.name} />
           <article className="info__article">
@@ -37,7 +42,7 @@ const AirLineCard: React.FC = () => {
             </p>
             <p>
               Website:{' '}
-              <a href={card.website} target="_blank">
+              <a href={`http://${card.website}`} target="_blank">
                 {card.website}
               </a>
             </p>
@@ -50,9 +55,7 @@ const AirLineCard: React.FC = () => {
           >
             Delete
           </button>
-          <button className="info__button-close" onClick={() => navigate(-1)}>
-            &#10008;
-          </button>
+          <button className="info__button-close">&#10008;</button>
         </div>
       </div>
     );
