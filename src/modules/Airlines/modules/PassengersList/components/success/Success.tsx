@@ -9,7 +9,7 @@ const Success = () => {
   const {setIsSuccess} = useAction();
 
   return (
-    <CSSTransition in={isSuccess} timeout={500} classNames="success" unmountOnExit mountOnEnter>
+    <CSSTransition in={isSuccess} timeout={200} classNames="success" unmountOnExit mountOnEnter>
       <div
         className="success"
         onClick={() => {

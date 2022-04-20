@@ -6,7 +6,7 @@
   @include border-radius(20px);
   @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff);
   @include text-shadow(-2px, -2px, 4px, #545a64, 3px, 3px, 1px, #b7b7b7);
-  @include transition(transform 800ms);
+  @include transition(transform 200ms);
 
   position: fixed;
   bottom: 15px;
@@ -50,7 +50,7 @@
   }
 
   &-enter {
-    transform: translateY(-1200px);
+    transform: translateY(1000px);
   }
 
   &-enter-active {
