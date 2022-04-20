@@ -289,6 +289,7 @@
   width: 30px;
   height: 30px;
   color: $text-color;
+  cursor: pointer;
 
   &:hover {
     @include transform(scale(1.1, 1.1));
@@ -316,6 +317,7 @@
   color: $color;
   padding: 0 20px;
   margin: 10px 15px;
+  cursor: pointer;
 
   &:hover {
     @include transform(scale(1.1, 1.1));
