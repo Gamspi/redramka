@@ -1,60 +1,71 @@
+@import "../../../../../Core/styles/mixins";
+
 .loading {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  @include transition(transform 800ms, opacity 800ms);
+
+
   position: fixed;
   min-width: 100%;
   min-height: 100vh;
   left: 0;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  z-index: 30;
 
   &__body {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
 
-    &:after,&:before{
-      position: absolute;
+
+    position: relative;
+
+    &:after, &:before {
+      @include border-radius(50%);
+
+
       content: "";
+      position: absolute;
       width: 200px;
       height: 200px;
-      border-radius: 50%;
 
     }
-    &:after{
-      animation: loading 1s linear infinite;
+
+    &:after {
+      @include animation(loading 1s linear infinite);
+
+
       border: 2px solid black;
       border-top: none;
 
     }
-    &:before{
-      background: #dadada;
-      box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,-8px -8px 20px #748394  inset, 10px 7px 20px #ffffff  inset,0 0 80px 80px #dadada;
+
+    &:before {
+      @include background();
+      @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff, -8px -8px 20px #748394 inset, 10px 7px 20px #ffffff inset, 0 0 80px 80px #dadada);
     }
 
     p {
-      font-weight: 700;
+      @include text-shadow(-2px, -2px, 4px, #545a64, 3px, 3px, 1px, #ffffff);
+
+
       font-size: 35px;
+      font-weight: 700;
       color: #002aff;
       z-index: 100;
-      text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #ffffff;
-
     }
 
 
   }
 
   &-enter {
-    //opacity: 0;
-    transform: translateX(1000px);
+    opacity: 0;
   }
 
   &-enter-active {
-    //opacity: 1;
-    transition: all 500ms;
-    transform: translateX(0);
+    opacity: 1;
 
   }
 
@@ -64,7 +75,6 @@
 
   &-exit-active {
     transform: translateY(-1500px);
-    transition: all 500ms;
   }
 
 }

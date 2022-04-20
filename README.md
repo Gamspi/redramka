@@ -13,6 +13,7 @@
   * подгрузка карточек
   * попапы
   * удаление 
+  * карточка сделанна роутером 
 * [Rest API](https://www.instantwebtools.net/fake-rest-api#read-passenger-paginated)
 
 ## Stack
@@ -22,6 +23,9 @@
 * Sass
 * TypeScript
 * Axios
+* Redux
+* Redux-thunk
+* React-Router-Dom
 
 ## Github-Pages
 

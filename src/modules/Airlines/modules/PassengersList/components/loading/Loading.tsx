@@ -5,7 +5,7 @@ interface props {
   isLoading: boolean;
 }
 const Loading = ({isLoading}: props) => (
-  <CSSTransition in={isLoading} classNames="loading" timeout={1000} unmountOnExit mountOnEnter>
+  <CSSTransition in={isLoading} classNames="loading" timeout={800} unmountOnExit mountOnEnter>
     <div className="loading">
       <div className="loading__body">
         <p>Loading....</p>

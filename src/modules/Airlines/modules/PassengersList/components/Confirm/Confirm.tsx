@@ -1,30 +1,22 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './Confirm.scss';
 import {CSSTransition} from 'react-transition-group';
-import {useTypeSelector} from "../../../../Core/hooks/useTypeSelector";
-import {useAction} from "../../../../Core/hooks/useAction";
-import {useNavigate, useParams} from "react-router-dom";
-import useTheme from "../../../../Core/hooks/useTheme";
+import {useTypeSelector} from '../../../../../Core/hooks/useTypeSelector';
+import {useAction} from '../../../../../Core/hooks/useAction';
+import {useNavigate, useParams} from 'react-router-dom';
 
+const Confirm: React.FC = () => {
+  const {isConfirm, activeCardId} = useTypeSelector((state) => state.cards);
+  const {setIsConfirm, deleteCardFunction} = useAction();
+  const {id} = useParams();
+  const navigate = useNavigate();
 
-const Confirm:React.FC = () => {
-  const{isConfirm,activeCardId}=useTypeSelector(state => state.cards)
-  const{setIsConfirm,deleteCardFunction}=useAction()
-  const {id} = useParams()
-  const navigate = useNavigate()
-  const [setTheme] = useTheme('fixed');
-  useEffect(() => {
-    isConfirm ? setTheme('true') : setTheme('');
-  }, [isConfirm]);
   const handelSetCards = () => {
-
-
-    deleteCardFunction(activeCardId)
+    deleteCardFunction(activeCardId);
     setIsConfirm(false);
-    if(id){
-      navigate(-1)
+    if (id) {
+      navigate(-1);
     }
-
   };
   return (
     <CSSTransition in={isConfirm} timeout={500} classNames="confirm" unmountOnExit mountOnEnter>

@@ -1,34 +1,36 @@
 @import '../../styles/mixins';
 
 .header {
-  @include flexbox();
+  @include flexbox;
   @include flex(0, 0, auto);
-  background: linear-gradient(118.38deg, #0028ff -4.6%, #009dff);
-  color: white;
-  padding: 10px 0;
-  box-shadow: 0px -3px 10px 1px #000e56 inset, 0 0 10px 3px #000e56;
+  @include box-shadow(0px -3px 10px 1px #000e56 inset, 0 0 10px 3px #000e56);
+  @include background(#0028ff, #009dff);
 
-  @media (max-width: 770px) {
-    display: flex;
-    justify-content: center;
-  }
+min-width: 100%;
+  padding: 10px 0;
 
   &__logo {
     @include flexbox();
     @include justify-content('flex-start');
+    @include text-shadow(0, 0, 10px, #000e56);
+
+
     position: relative;
     font-size: 50px;
     z-index: 30;
-    text-shadow: 0 0 10px #000e56;
-    transition: transform 500ms;
 
-a{
-  color: #ffffff;
-  text-decoration: none;
+    a {
+      color: #ffffff;
+      text-decoration: none;
 
-}
+    }
 
     &:after {
+      @include border-radius(50%);
+      @include box-shadow(0 0 10px #0022ff, 2px 0 3px 1px #1b8900 inset);
+      @include animation(ball 2s linear infinite);
+
+
       content: "";
       position: absolute;
       top: 10px;
@@ -36,11 +38,7 @@ a{
       width: 10px;
       height: 10px;
       background: #06ff00;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #0022ff, 2px 0 3px 1px #1b8900 inset;
-      animation: ball 2s linear infinite;
       z-index: -1;
-      box-sizing: border-box;
     }
   }
 }

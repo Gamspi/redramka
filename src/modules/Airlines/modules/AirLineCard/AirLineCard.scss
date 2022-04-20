@@ -1,26 +1,33 @@
 @import "../../../Core/styles/mixins";
+
 .info {
+  @include background(rgba(215, 215, 215, 0.5), rgba(255, 255, 255, 0.5));
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+
   position: fixed;
   top: 0;
   left: 0;
   min-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-  background: linear-gradient(118.38deg, rgba(215,215,215,0.7) , rgba(255, 255, 255, 0.7));
+  min-height: 100%;
   backdrop-filter: blur(5px);
+  z-index: 50;
+  transition: opacity 500ms;
+
+
   &__body {
+    @include background;
+    @include border-radius(20px);
+    @include box-shadow(-8px -8px 20px #748394, 15px 15px 20px #ffffff);
+    @include flexbox;
+    @include flex-direction(column);
+
+
     position: relative;
     min-width: 300px;
     min-height: 200px;
-    background: linear-gradient(118.38deg, #d7d7d7 -4.6%, #ffffff);
-    border-radius: 20px;
-    box-shadow: -8px -8px 20px #748394, 15px 15px 20px #ffffff;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
 
     img {
       max-height: 250px;
@@ -34,70 +41,38 @@
 
     span {
       color: #003874;
-
-      a:visited {
-        color: inherit;
-      }
     }
 
+    a:visited {
+      color: inherit;
+    }
   }
 
-  button {
-    position: static;
-    border-radius: 20px;
-    width: 100px;
-    height: 35px;
-    margin: 10px;
-    align-self: end;
-    transition: all 200ms linear;
-    border: none;
-    background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 200.44%);
-    box-shadow: -8px -8px 20px #748394, 10px 10px 20px #ffffff;
-    color: #b90000;
-
-    &:hover {
-      transform: scale(1.1, 1.1);
-    }
-
-    &:active {
-      box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff, -8px -8px 20px #d7d7d7 inset, 20px 5px 20px #ffffff inset;
-    }
+  &__button-delete {
+    @include button
   }
 
   &__article {
-    margin: 10px 0;
+    margin: 15px 0;
     border-bottom: 1px solid #b0b0b0;
     border-top: 1px solid #b0b0b0;
 
   }
 
   .info__button-close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 35px;
-
-    &:hover {
-      transform: scale(1.1, 1.1);
-    }
-    @include button-close()
-
-
+    @include button-close
   }
 
   &-enter {
     opacity: 0;
-    transition: opacity 1000ms;
   }
 
   &-enter-active {
     opacity: 1;
-    transition: opacity 1000ms;
   }
 
   &-exit {
     opacity: 1;
-    transition: opacity 1000ms;
   }
 
   &-exit-active {

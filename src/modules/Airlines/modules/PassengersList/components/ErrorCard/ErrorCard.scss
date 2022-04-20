@@ -4,6 +4,7 @@
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
+  @include transition(opacity 500ms);
 
 
   position: fixed;
@@ -11,7 +12,7 @@
   left: 0;
   min-height: 100%;
   min-width: 100%;
-  z-index: 100;
+  z-index: 150;
   backdrop-filter: blur(5px);
 
   &__body {
@@ -22,10 +23,10 @@
     @include box-shadow(-8px -8px 15px #ab0000, 10px 7px 20px #ffffff);
     @include text-shadow(-2px, -2px, 3px, #660000, 2px, 2px, 3px, #ff3a3a);
 
+
     position: relative;
     color: #ffffff;
     padding: 30px;
-
   }
 
   &__button {
@@ -38,7 +39,6 @@
 
   &-enter-active {
     opacity: 1;
-    transition: all 500ms;
   }
 
   &-exit {
@@ -47,8 +47,6 @@
 
   &-exit-active {
     opacity: 0;
-    transition: all 800ms;
-
   }
 
 }

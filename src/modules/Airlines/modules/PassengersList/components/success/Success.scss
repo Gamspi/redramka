@@ -1,46 +1,55 @@
+@import "../../../../../Core/styles/mixins";
+@import "../../../../../Core/styles/animations";
+
 .success {
+  @include background(#06ff00, #7eff00);
+  @include border-radius(20px);
+  @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff);
+  @include text-shadow(-2px, -2px, 4px, #545a64, 3px, 3px, 1px, #b7b7b7);
+  @include transition(transform 800ms);
+
+
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
   padding: 30px;
-  background: #37ff00;
-  border-radius: 20px;
   color: #ffffff;
-  text-shadow: -2px -2px 4px #545a64, 3px 3px 1px #b7b7b7;
-  background: linear-gradient(118.38deg, #06ff00 -4.6%, #bffb83 200.44%);
-  box-shadow: -8px -8px 20px #748394, 10px 7px 20px #ffffff,;
   z-index: 150;
+
   h1 {
     font-size: 40px;
   }
 
   &:after {
+    @include border-radius(10px 0 10px 10px);
+    @include transform(rotate(45deg));
+    @include box-shadow(-3px 3px 3px 1px #1b8900 inset, 3px -13px 20px #1b8900);
+
+
+    content: "";
     position: absolute;
     right: 80px;
     top: 0;
-    content: "";
     width: 50px;
     height: 20px;
-    border-radius: 10px 0 10px 10px;
     background: #abff5c;
-    transform: rotate(45deg);
     z-index: 1;
-    box-shadow: -3px 3px 3px 1px #1b8900 inset, 3px -13px 20px #1b8900;
-
   }
 
   &:before {
+    @include border-radius(10px 10px 10px 10px);
+    @include transform(rotate(-50deg));
+    @include box-shadow(-3px -3px 3px 1px #1b8900 inset, 3px 13px 20px #1b8900);
+
+
+    content: "";
     position: absolute;
     right: 15px;
     top: -20px;
-    content: "";
     width: 100px;
     height: 20px;
-    border-radius: 10px 10px 10px 10px;
     background: #abff5c;
-    transform: rotate(-50deg);
     z-index: 201;
-    box-shadow: -3px -3px 3px 1px #1b8900 inset, 3px 13px 20px #1b8900;
   }
 
   &-enter {
@@ -49,7 +58,7 @@
 
   &-enter-active {
     transform: translateY(0);
-    transition: all 500ms;
+
   }
 
   &-exit {
@@ -58,19 +67,22 @@
 
   &-exit-active {
     transform: translateX(1000px);
-    transition: all 500ms;
   }
 
 
   @media(max-width: 768px) {
     & {
+      @include border-radius(50%);
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+
+
       font-size: 0;
       width: 100px;
       height: 100px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      bottom: 30px;
+      right: 40px;
 
       h1 {
         font-size: 24px;
@@ -78,7 +90,6 @@
 
       &:after {
         right: 25px;
-
       }
 
       &:before {

@@ -1,23 +1,22 @@
 @import "../../styles/mixins";
 
 .not-found-page {
-  height: 100%;
   @include flexbox;
   @include flex-direction(column);
   @include justify-content(center);
   @include align-items(center);
 
 
-  //background: linear-gradient(118.38deg, #dedede -4.6%, #ffffff 100%);
-  //-webkit-background-clip: text;
-  //-webkit-text-fill-color: transparent;
-  //font-size: 40px;
-
+  height: 100%;
   color: #dedede;
 
   &__title {
+    @include text-shadow(-8px, -8px, 8px, #545a64, 8px, 8px, 10px, #ffffff);
     font-size: 200px;
-    text-shadow: -8px -8px 8px #545a64, 8px 8px 10px #ffffff;
+    @media (max-width: 770px) {
+      font-size: 150px;
+margin: 10px;
+    }
   }
 
   &__text {
@@ -25,13 +24,19 @@
     @include flex-direction(column);
     @include justify-content(center);
     @include align-items(center);
+
+
     font-size: 30px;
 
-    p{
+    p {
+      @include text-shadow(-5px, -5px, 5px, #707886, 5px, 5px, 5px, #ffffff);
+
+
       font-size: 30px;
       font-weight: 700;
-      text-shadow: -5px -5px 5px #707886, 5px 5px 5px #ffffff;
       color: #00153f;
+      text-align: center;
+      margin: 10px;
     }
 
 

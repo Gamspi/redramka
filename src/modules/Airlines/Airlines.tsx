@@ -1,5 +1,3 @@
-import './Airlines.scss';
-
 import React from 'react';
 
 import AviaLineLayout from './layouts/AviaLineLayout';
