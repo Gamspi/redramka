@@ -23,10 +23,8 @@
     @include flex-direction(column);
 
     position: relative;
-    min-width: 300px;
-    min-height: 200px;
     padding: 20px;
-
+    margin: 5px;
     img {
       max-height: 250px;
       margin: 10px 0;

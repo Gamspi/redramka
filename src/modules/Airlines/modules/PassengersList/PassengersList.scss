@@ -7,7 +7,6 @@
   padding: 20px 0;
 
   &__body {
-    margin: 0 -10px;
 
     @media (max-width: 360px) {
       margin: 0;
@@ -17,7 +16,6 @@
       @include flexbox;
       @include flex-wrap(wrap);
 
-      padding: 0 10px;
     }
   }
 }
