@@ -3,7 +3,7 @@
 .cards-list {
   @include transition(opacity 800ms, transform 800ms);
 
-  min-height: 100%;
+height: 100%;
   padding: 20px 0;
 
   &__body {
