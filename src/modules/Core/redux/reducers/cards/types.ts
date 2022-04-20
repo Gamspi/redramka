@@ -1,4 +1,4 @@
-import {IPassengers} from '../../../models/IPassengers';
+import {IPassengers} from '../../../models/Airline';
 
 export interface cardsState {
   isLoading: boolean;

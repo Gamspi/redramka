@@ -10,10 +10,10 @@ import {
   setSuccessAction,
   setTotalPassengersAction,
 } from './types';
-import {IPassengers} from '../../../models/IPassengers';
+import {IPassengers} from '../../../models/Airline';
 import {appDispatch} from '../../store';
 import axios, {AxiosResponse} from 'axios';
-import {IResponse} from '../../../models/IResponse';
+import {IResponse} from '../../../models/Airline';
 import {limit} from '../../../constants/limit';
 
 export const CardsActionCreators = {

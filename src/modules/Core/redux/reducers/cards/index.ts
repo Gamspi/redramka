@@ -1,5 +1,5 @@
 import {cardsState, AuthActionEnum, CardsAction} from './types';
-import {IPassengers} from '../../../models/IPassengers';
+import {IPassengers} from '../../../models/Airline';
 
 const initialState: cardsState = {
   isError: false,
