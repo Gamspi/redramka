@@ -1,11 +1,10 @@
-@import "../../../../../Core/styles/mixins";
+@import '../../../../../Core/styles/mixins';
 
 .loading {
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
   @include transition(transform 800ms, opacity 800ms);
-
 
   position: fixed;
   min-width: 100%;
@@ -19,45 +18,44 @@
     @include justify-content(center);
     @include align-items(center);
 
-
     position: relative;
 
-    &:after, &:before {
+    &:after,
+    &:before {
       @include border-radius(50%);
 
-
-      content: "";
+      content: '';
       position: absolute;
       width: 200px;
       height: 200px;
-
     }
 
     &:after {
       @include animation(loading 1s linear infinite);
 
-
       border: 2px solid black;
       border-top: none;
-
     }
 
     &:before {
       @include background();
-      @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff, -8px -8px 20px #748394 inset, 10px 7px 20px #ffffff inset, 0 0 80px 80px #dadada);
+      @include box-shadow(
+        -8px -8px 20px #748394,
+        10px 7px 20px #ffffff,
+        -8px -8px 20px #748394 inset,
+        10px 7px 20px #ffffff inset,
+        0 0 80px 80px #dadada
+      );
     }
 
     p {
       @include text-shadow(-2px, -2px, 4px, #545a64, 3px, 3px, 1px, #ffffff);
-
 
       font-size: 35px;
       font-weight: 700;
       color: #002aff;
       z-index: 100;
     }
-
-
   }
 
   &-enter {
@@ -66,7 +64,6 @@
 
   &-enter-active {
     opacity: 1;
-
   }
 
   &-exit {
@@ -76,6 +73,4 @@
   &-exit-active {
     transform: translateY(-1500px);
   }
-
 }
-

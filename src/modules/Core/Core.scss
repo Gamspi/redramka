@@ -1,5 +1,5 @@
-@import "styles/main";
-@import "styles/mixins";
+@import 'styles/main';
+@import 'styles/mixins';
 
 .core {
   @include flexbox();
@@ -14,5 +14,3 @@
     margin: 0 auto;
   }
 }
-
-

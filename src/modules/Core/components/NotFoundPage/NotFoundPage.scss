@@ -1,11 +1,10 @@
-@import "../../styles/mixins";
+@import '../../styles/mixins';
 
 .not-found-page {
   @include flexbox;
   @include flex-direction(column);
   @include justify-content(center);
   @include align-items(center);
-
 
   height: 100%;
   color: #dedede;
@@ -15,7 +14,7 @@
     font-size: 200px;
     @media (max-width: 770px) {
       font-size: 150px;
-margin: 10px;
+      margin: 10px;
     }
   }
 
@@ -25,12 +24,10 @@ margin: 10px;
     @include justify-content(center);
     @include align-items(center);
 
-
     font-size: 30px;
 
     p {
       @include text-shadow(-5px, -5px, 5px, #707886, 5px, 5px, 5px, #ffffff);
-
 
       font-size: 30px;
       font-weight: 700;
@@ -38,7 +35,5 @@ margin: 10px;
       text-align: center;
       margin: 10px;
     }
-
-
   }
 }

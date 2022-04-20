@@ -99,8 +99,8 @@
 
 @mixin text-border {
   text-shadow: 0 -1px 0 #000, 0 -1px 0 #000, 0 1px 0 #000, 0 1px 0 #000, -1px 0 0 #000, 1px 0 0 #000, -1px 0 0 #000,
-  1px 0 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-  -1px 1px 0 #000, 1px 1px 0 #000;
+    1px 0 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 @mixin flexbox {
@@ -272,17 +272,15 @@
   align-self: $value;
 }
 
-@mixin background($color1: #d7d7d7,$color2:  #ffffff) {
+@mixin background($color1: #d7d7d7, $color2: #ffffff) {
   background: linear-gradient(120deg, $color1 0%, $color2 100%);
 }
 
-
-@mixin button-close($text-color:#ff0000,$color1: #d7d7d7,$color2: #ffffff,$color3: #8d8d8d,) {
+@mixin button-close($text-color: #ff0000, $color1: #d7d7d7, $color2: #ffffff, $color3: #8d8d8d) {
   @include border-radius(50%);
-  @include background($color1,$color2);
+  @include background($color1, $color2);
   @include box-shadow(-8px -8px 20px $color3, 10px 7px 20px $color2);
-  @include transition(transform 200ms linear,box-shadow 200ms linear);
-
+  @include transition(transform 200ms linear, box-shadow 200ms linear);
 
   position: absolute;
   right: 10px;
@@ -297,13 +295,16 @@
   }
 
   &:active {
-    @include box-shadow(-8px -8px 20px $color3, 10px 7px 20px $color2, -5px -5px 7px $color3 inset, 20px 5px 20px $color1 inset);
+    @include box-shadow(
+      -8px -8px 20px $color3,
+      10px 7px 20px $color2,
+      -5px -5px 7px $color3 inset,
+      20px 5px 20px $color1 inset
+    );
     @include transform(scale(1, 1));
   }
-
-
 }
-@mixin button ($color:#b90000) {
+@mixin button($color: #b90000) {
   @include border-radius(20px);
   @include align-self(end);
   @include transition(transform 200ms linear, box-shadow 200ms linear);
@@ -321,7 +322,11 @@
   }
 
   &:active {
-    @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff, -8px -8px 20px #d7d7d7 inset, 20px 5px 20px #ffffff inset);
+    @include box-shadow(
+      -8px -8px 20px #748394,
+      10px 7px 20px #ffffff,
+      -8px -8px 20px #d7d7d7 inset,
+      20px 5px 20px #ffffff inset
+    );
   }
-
 }

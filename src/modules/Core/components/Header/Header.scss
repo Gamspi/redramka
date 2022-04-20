@@ -6,14 +6,13 @@
   @include box-shadow(0px -3px 10px 1px #000e56 inset, 0 0 10px 3px #000e56);
   @include background(#0028ff, #009dff);
 
-min-width: 100%;
+  min-width: 100%;
   padding: 10px 0;
 
   &__logo {
     @include flexbox();
     @include justify-content('flex-start');
     @include text-shadow(0, 0, 10px, #000e56);
-
 
     position: relative;
     font-size: 50px;
@@ -22,7 +21,6 @@ min-width: 100%;
     a {
       color: #ffffff;
       text-decoration: none;
-
     }
 
     &:after {
@@ -30,8 +28,7 @@ min-width: 100%;
       @include box-shadow(0 0 10px #0022ff, 2px 0 3px 1px #1b8900 inset);
       @include animation(ball 2s linear infinite);
 
-
-      content: "";
+      content: '';
       position: absolute;
       top: 10px;
       left: 140px;

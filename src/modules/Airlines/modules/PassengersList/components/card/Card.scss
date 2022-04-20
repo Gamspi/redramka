@@ -1,4 +1,4 @@
-@import "../../../../../Core/styles/mixins";
+@import '../../../../../Core/styles/mixins';
 
 .card {
   @include transition(transform 200ms linear, z-index 200ms linear);
@@ -32,16 +32,12 @@
   &:hover {
     @include transform(scale(1.02, 1.05));
     z-index: 10;
-
   }
 
   button {
     @include button-close();
-
   }
 
   &__info {
-
   }
-
 }

@@ -2,7 +2,7 @@ import React, {Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import NotFoundPage from '../../Core/components/NotFoundPage/NotFoundPage';
 
-const AirLineList = React.lazy(() => import('../modules/PassengersList/PassengersList'));
+const PassengersList = React.lazy(() => import('../modules/PassengersList/PassengersList'));
 const AirLineCard = React.lazy(() => import('../modules/AirLineCard/AirLineCard'));
 
 /**
@@ -16,7 +16,7 @@ const AviaLineLayout: React.FC = () => {
         path="/redramka"
         element={
           <Suspense fallback="">
-            <AirLineList />
+            <PassengersList />
           </Suspense>
         }
       >

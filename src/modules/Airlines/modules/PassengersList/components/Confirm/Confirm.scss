@@ -1,12 +1,11 @@
-@import "../../../../../Core/styles/mixins";
+@import '../../../../../Core/styles/mixins';
 
 .confirm {
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
-  @include background(rgba(215,215,215,0.7),rgba(255, 255, 255, 0.7));
+  @include background(rgba(215, 215, 215, 0.7), rgba(255, 255, 255, 0.7));
   @include transition(opacity 800ms);
-
 
   position: fixed;
   left: 0;
@@ -23,8 +22,7 @@
     @include flex-direction(column);
     @include background;
     @include border-radius(20px);
-    @include box-shadow( -8px -8px 20px #748394, 15px 15px 20px #ffffff);
-
+    @include box-shadow(-8px -8px 20px #748394, 15px 15px 20px #ffffff);
 
     max-width: 400px;
     min-height: 100px;
@@ -35,7 +33,7 @@
     margin-top: 10px;
 
     button {
-      @include button(#000820)
+      @include button(#000820);
     }
   }
 

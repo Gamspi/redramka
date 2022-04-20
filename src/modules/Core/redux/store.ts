@@ -1,18 +1,17 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import reducers from "./reducers";
+import reducers from './reducers';
 
 /**
  * Создание хранилища Redux
  */
-const rootReducer = combineReducers(reducers)
+const rootReducer = combineReducers(reducers);
 
 export const store = createStore(
-    rootReducer,  {},
+  rootReducer,
+  {},
   composeWithDevTools({name: 'AIRLINES', trace: true})(applyMiddleware(thunk))
 );
-export type rootState = ReturnType<typeof store.getState>
-export type appDispatch = typeof store.dispatch
-
-
+export type rootState = ReturnType<typeof store.getState>;
+export type appDispatch = typeof store.dispatch;

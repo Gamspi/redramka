@@ -1,8 +1,7 @@
-@import "../../../Core/styles/mixins";
+@import '../../../Core/styles/mixins';
 
 .cards-list {
   @include transition(opacity 800ms, transform 800ms);
-
 
   min-height: 100%;
   padding: 20px 0;
@@ -18,13 +17,10 @@
       @include flexbox;
       @include flex-wrap(wrap);
 
-
       padding: 0 10px;
     }
   }
-
 }
-
 
 .item {
   @include transition(opacity 800ms, transform 800ms);
@@ -48,7 +44,6 @@
     opacity: 1;
     transform: scale(1, 1);
   }
-
 
   &-exit-active {
     transform: scale(0, 0);

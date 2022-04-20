@@ -1,4 +1,4 @@
-@import "../../../Core/styles/mixins";
+@import '../../../Core/styles/mixins';
 
 .info {
   @include background(rgba(215, 215, 215, 0.5), rgba(255, 255, 255, 0.5));
@@ -15,14 +15,12 @@
   z-index: 50;
   transition: opacity 500ms;
 
-
   &__body {
     @include background;
     @include border-radius(20px);
     @include box-shadow(-8px -8px 20px #748394, 15px 15px 20px #ffffff);
     @include flexbox;
     @include flex-direction(column);
-
 
     position: relative;
     min-width: 300px;
@@ -36,7 +34,8 @@
     }
   }
 
-  p, h2 {
+  p,
+  h2 {
     margin: 10px 0;
 
     span {
@@ -49,18 +48,17 @@
   }
 
   &__button-delete {
-    @include button
+    @include button;
   }
 
   &__article {
     margin: 15px 0;
     border-bottom: 1px solid #b0b0b0;
     border-top: 1px solid #b0b0b0;
-
   }
 
   .info__button-close {
-    @include button-close
+    @include button-close;
   }
 
   &-enter {
