@@ -28,7 +28,6 @@ const AviaLineLayout: React.FC = () => {
             </Suspense>
           }
         />
-
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

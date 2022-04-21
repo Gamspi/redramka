@@ -12,7 +12,7 @@ import {useGetInfo} from '../../../Core/hooks/useGetInfo';
  * Карточка авиалинни
  */
 const AirLineCard: React.FC = () => {
-  const [animation,setAnimation]=useState(true)
+  const [animation, setAnimation] = useState(true);
   const {cards, activeCard} = useTypeSelector((state) => state.cards);
   const navigate = useNavigate();
   const {setIsConfirm} = useAction();
@@ -22,17 +22,15 @@ const AirLineCard: React.FC = () => {
   const handelClouse = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement;
     if (target.classList.contains('info__button-close') || !target.closest('.info__body')) {
-      setAnimation(false)
-      setTimeout(()=>{
+      setAnimation(false);
+      setTimeout(() => {
         navigate('/redramka');
-
-
-      },300)
+      }, 300);
     }
   };
 
   return (
-    <CSSTransition timeout={500} classNames="info" in={animation&&!!card.name} unmountOnExit mountOnEnter>
+    <CSSTransition timeout={500} classNames="info" in={animation && !!card.name} unmountOnExit mountOnEnter>
       <div className="info" onClick={handelClouse}>
         <div className="info__body">
           <img src={card.logo} alt={card.name} />
