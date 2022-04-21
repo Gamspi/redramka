@@ -16,7 +16,7 @@ const Confirm: React.FC = () => {
     deleteCardFunction(activeCard!._id);
     setIsConfirm(false);
     if (id) {
-      navigate(-1);
+      navigate("/redramka");
     }
   };
   return (
