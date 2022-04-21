@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/redramka/static/css/main.2d2c9333.css",
-    "main.js": "/redramka/static/js/main.9f64e65d.js",
+    "main.js": "/redramka/static/js/main.2403f2bf.js",
     "static/js/727.6b77a8af.chunk.js": "/redramka/static/js/727.6b77a8af.chunk.js",
     "static/css/816.2624e79f.chunk.css": "/redramka/static/css/816.2624e79f.chunk.css",
     "static/js/816.33e1182d.chunk.js": "/redramka/static/js/816.33e1182d.chunk.js",
     "static/css/653.b5e55eff.chunk.css": "/redramka/static/css/653.b5e55eff.chunk.css",
-    "static/js/653.1989b35f.chunk.js": "/redramka/static/js/653.1989b35f.chunk.js",
+    "static/js/653.42436996.chunk.js": "/redramka/static/js/653.42436996.chunk.js",
     "static/js/295.acaf4fca.chunk.js": "/redramka/static/js/295.acaf4fca.chunk.js",
     "index.html": "/redramka/index.html",
     "main.2d2c9333.css.map": "/redramka/static/css/main.2d2c9333.css.map",
-    "main.9f64e65d.js.map": "/redramka/static/js/main.9f64e65d.js.map",
+    "main.2403f2bf.js.map": "/redramka/static/js/main.2403f2bf.js.map",
     "727.6b77a8af.chunk.js.map": "/redramka/static/js/727.6b77a8af.chunk.js.map",
     "816.2624e79f.chunk.css.map": "/redramka/static/css/816.2624e79f.chunk.css.map",
     "816.33e1182d.chunk.js.map": "/redramka/static/js/816.33e1182d.chunk.js.map",
     "653.b5e55eff.chunk.css.map": "/redramka/static/css/653.b5e55eff.chunk.css.map",
-    "653.1989b35f.chunk.js.map": "/redramka/static/js/653.1989b35f.chunk.js.map",
+    "653.42436996.chunk.js.map": "/redramka/static/js/653.42436996.chunk.js.map",
     "295.acaf4fca.chunk.js.map": "/redramka/static/js/295.acaf4fca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2d2c9333.css",
-    "static/js/main.9f64e65d.js"
+    "static/js/main.2403f2bf.js"
   ]
 }
