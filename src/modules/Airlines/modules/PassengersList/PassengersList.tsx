@@ -41,9 +41,9 @@ const PassengersList: React.FC = () => {
           ))}
         </TransitionGroup>
       </div>
-      <CSSTransition timeout={500} classNames="info" in={!!id}>
+
         <Outlet />
-      </CSSTransition>
+
     </div>
   );
 };
