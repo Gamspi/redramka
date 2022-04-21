@@ -30,11 +30,11 @@ const AirLineCard: React.FC = () => {
   };
 
   return (
-    <CSSTransition timeout={500} classNames="info" in={animation && !!card.name} unmountOnExit mountOnEnter>
-      <div className="info" onClick={handelClouse}>
-        <div className="info__body">
+    <CSSTransition timeout={500} classNames="airLineCard" in={animation && !!card.name} unmountOnExit mountOnEnter>
+      <div className="airLineCard" onClick={handelClouse}>
+        <div className="airLineCard__body">
           <img src={card.logo} alt={card.name} />
-          <article className="info__article">
+          <article className="airLineCard__article">
             <h2>
               Name: <span>{card.name || 'Undefined'}</span>
             </h2>
@@ -58,14 +58,14 @@ const AirLineCard: React.FC = () => {
             </p>
           </article>
           <button
-            className="info__button-delete"
+            className="airLineCard__button-delete"
             onClick={() => {
               setIsConfirm(true);
             }}
           >
             Delete
           </button>
-          <button className="info__button-close">&#10008;</button>
+          <button className="airLineCard__button-close">&#10008;</button>
         </div>
       </div>
     </CSSTransition>

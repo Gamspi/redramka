@@ -25,12 +25,12 @@ const PassengersList: React.FC = () => {
     isConfirm || isError || !!id ? setTheme('true') : setTheme('');
   }, [isConfirm, isError, id]);
   return (
-    <div className="cards-list">
+    <div className="PassengersList">
       <ErrorCard />
       <Loading isLoading={isLoading} />
       <Success />
       <Confirm />
-      <div className="cards-list__body">
+      <div className="PassengersList__body">
         <TransitionGroup component="ul">
           {cards.map((element) => (
             <CSSTransition timeout={500} key={element._id} classNames="item">

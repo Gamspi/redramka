@@ -1,6 +1,6 @@
 @import '../../../Core/styles/mixins';
 
-.cards-list {
+.PassengersList {
   @include transition(opacity 800ms, transform 800ms);
 
   height: 100%;
