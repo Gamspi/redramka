@@ -41,41 +41,42 @@ const AirLineCard: React.FC = () => {
 
   return (
     <div className="info" onClick={handelClouse}>
-      <div className="info__body">
+      {card.name&&<div className="info__body">
         <img src={card.logo} alt={card.name} />
         <article className="info__article">
           <h2>
-            Name: <span>{card.name}</span>
+            Name: <span>{card.name||"Undefined"}</span>
           </h2>
           <p>
-            Country: <span>{card.country}</span>
+            Country: <span>{card.country||"Undefined"}</span>
           </p>
           <p>
-            Established: <span>{card.established}</span>
+            Established: <span>{card.established||"Undefined"}</span>
           </p>
           <p>
-            Slogan: <span>{card.slogan}</span>
+            Slogan: <span>{card.slogan||"Undefined"}</span>
           </p>
           <p>
-            Head quaters: <span>{card.head_quaters}</span>
+            Head quaters: <span>{card.head_quaters||"Undefined"}</span>
           </p>
           <p>
             Website:{' '}
             <a href={`http://${card.website}`} target="_blank">
-              {card.website}
+              {card.website||"Undefined"}
             </a>
           </p>
         </article>
         <button
-          className="info__button-delete"
-          onClick={() => {
-            setIsConfirm(true);
-          }}
+            className="info__button-delete"
+            onClick={() => {
+              setIsConfirm(true);
+            }}
         >
           Delete
         </button>
         <button className="info__button-close">&#10008;</button>
-      </div>
+      </div>}
+
     </div>
   );
 };
