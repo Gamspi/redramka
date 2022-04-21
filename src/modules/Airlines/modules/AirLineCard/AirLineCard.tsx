@@ -21,7 +21,7 @@ const AirLineCard: React.FC = () => {
 
   const handelClouse = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement;
-    if (target.classList.contains('info__button-close') || !target.closest('.info__body')) {
+    if (target.classList.contains('airLineCard__button-close') || !target.closest('.airLineCard__body')) {
       setAnimation(false);
       setTimeout(() => {
         navigate('/redramka');
