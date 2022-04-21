@@ -1,3 +1,5 @@
+import './PassengersList.scss';
+
 import React, {MouseEvent, useEffect} from 'react';
 import Loading from './components/loading/Loading';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
@@ -6,7 +8,6 @@ import Confirm from './components/Confirm/Confirm';
 import Card from './components/card/Card';
 import {useTypeSelector} from '../../../Core/hooks/useTypeSelector';
 import {useAction} from '../../../Core/hooks/useAction';
-import './PassengersList.scss';
 import ErrorCard from './components/ErrorCard/ErrorCard';
 import {Outlet, useParams} from 'react-router-dom';
 import useTheme from '../../../Core/hooks/useTheme';
@@ -17,7 +18,7 @@ import useTheme from '../../../Core/hooks/useTheme';
 const PassengersList: React.FC = () => {
   const {id} = useParams();
   const {isLoading, cards, isConfirm, isError} = useTypeSelector((state) => state.cards);
-  const {setId, setIsConfirm} = useAction();
+  const {setActivCard, setIsConfirm} = useAction();
   const [setTheme] = useTheme('fixed');
 
   useEffect(() => {
@@ -31,24 +32,23 @@ const PassengersList: React.FC = () => {
       <Confirm />
       <div className="cards-list__body">
         <TransitionGroup component="ul">
-          {cards.map(({_id: id, trips, name}) => (
-            <CSSTransition timeout={500} key={id} classNames="item">
+          {cards.map((element) => (
+            <CSSTransition timeout={500} key={element._id} classNames="item">
               <li
                 className="item"
-                onClick={()=> setId(id)}
-
-
+                onClick={()=> setActivCard(element)}
               >
-                <Card id={id} trips={trips} name={name} />
+                <Card id={element._id} trips={element.trips} name={element.name} />
               </li>
             </CSSTransition>
           ))}
         </TransitionGroup>
       </div>
-      <CSSTransition timeout={500} classNames="info" in={!!id}>
+        <CSSTransition timeout={500} classNames="info" in={!!id}>
         <Outlet />
-      </CSSTransition>
-    </div>
+    </CSSTransition>
+
+</div>
   );
 };
 export default React.memo(PassengersList);

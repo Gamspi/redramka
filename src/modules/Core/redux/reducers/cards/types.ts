@@ -1,4 +1,4 @@
-import {IPassengers} from '../../../models/Airline';
+import { IPassengers } from "../../../models/Airline";
 
 export interface cardsState {
   isLoading: boolean;
@@ -9,7 +9,7 @@ export interface cardsState {
   totalPassengers: number;
   page: number;
 
-  activeCardId: string;
+  activeCard: IPassengers|null;
 
   cards: Array<IPassengers>;
 }
@@ -22,7 +22,7 @@ export enum AuthActionEnum {
   SET_PAGE = 'SET_PAGE',
   SET_SUCCESS = 'SET_SUCCESS',
   SET_IS_ERROR = 'SET_IS_ERROR',
-  SET_ACTIVE_CARD_ID = 'SET_ACTIVE_CARD_ID',
+  SET_ACTIVE_CARD = 'SET_ACTIVE_CARD',
   DELETE_CARD = 'DELETE_CARD',
 }
 
@@ -45,9 +45,9 @@ export type setIsErrorAction = {
   type: AuthActionEnum.SET_IS_ERROR;
   payload: boolean;
 };
-export type setActiveCardIdAction = {
-  type: AuthActionEnum.SET_ACTIVE_CARD_ID;
-  payload: string;
+export type setActiveCardAction = {
+  type: AuthActionEnum.SET_ACTIVE_CARD;
+  payload: IPassengers;
 };
 
 export type deleteCardAction = {
@@ -71,6 +71,6 @@ export type CardsAction =
   | setPageAction
   | setIsErrorAction
   | deleteCardAction
-  | setActiveCardIdAction
+  | setActiveCardAction
   | setIsConfirmAction
   | setSuccessAction;

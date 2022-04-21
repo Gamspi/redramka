@@ -1,9 +1,10 @@
 import React, {Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import NotFoundPage from '../../Core/components/NotFoundPage/NotFoundPage';
+import AirLineCard from '../modules/AirLineCard/AirLineCard';
 
 const PassengersList = React.lazy(() => import('../modules/PassengersList/PassengersList'));
-const AirLineCard = React.lazy(() => import('../modules/AirLineCard/AirLineCard'));
+
 
 /**
  * Слой роутинга для модуля Airline
@@ -23,13 +24,10 @@ const AviaLineLayout: React.FC = () => {
         <Route
           path="card/:id"
           element={
-            <Suspense fallback="">
               <AirLineCard />
-            </Suspense>
           }
         />
 
-        <Route path="card/*" element={<NotFoundPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

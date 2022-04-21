@@ -6,13 +6,13 @@ import {useAction} from '../../../../../Core/hooks/useAction';
 import {useNavigate, useParams} from 'react-router-dom';
 
 const Confirm: React.FC = () => {
-  const {isConfirm, activeCardId} = useTypeSelector((state) => state.cards);
+  const {isConfirm, activeCard} = useTypeSelector((state) => state.cards);
   const {setIsConfirm, deleteCardFunction} = useAction();
   const {id} = useParams();
   const navigate = useNavigate();
 
   const handelSetCards = () => {
-    deleteCardFunction(activeCardId);
+    deleteCardFunction(activeCard!._id);
     setIsConfirm(false);
     if (id) {
       navigate(-1);

@@ -1,4 +1,4 @@
-export interface Airline {
+export interface IAirline {
   id: number;
   name: string;
   country: string;
@@ -12,7 +12,7 @@ export interface IPassengers {
   _id: string;
   name: string;
   trips: number;
-  airline: Array<Airline>;
+  airline: Array<IAirline>;
   __v: number;
 }
 export interface IResponse<T> {
