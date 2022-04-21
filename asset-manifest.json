@@ -1,21 +1,25 @@
 {
   "files": {
     "main.css": "/redramka/static/css/main.2d2c9333.css",
-    "main.js": "/redramka/static/js/main.28ac5548.js",
-    "static/css/114.a8ecd98e.chunk.css": "/redramka/static/css/114.a8ecd98e.chunk.css",
-    "static/js/114.617a5a25.chunk.js": "/redramka/static/js/114.617a5a25.chunk.js",
-    "static/css/202.624fe959.chunk.css": "/redramka/static/css/202.624fe959.chunk.css",
-    "static/js/202.dc577560.chunk.js": "/redramka/static/js/202.dc577560.chunk.js",
+    "main.js": "/redramka/static/js/main.9f64e65d.js",
+    "static/js/727.6b77a8af.chunk.js": "/redramka/static/js/727.6b77a8af.chunk.js",
+    "static/css/816.2624e79f.chunk.css": "/redramka/static/css/816.2624e79f.chunk.css",
+    "static/js/816.33e1182d.chunk.js": "/redramka/static/js/816.33e1182d.chunk.js",
+    "static/css/653.b5e55eff.chunk.css": "/redramka/static/css/653.b5e55eff.chunk.css",
+    "static/js/653.1989b35f.chunk.js": "/redramka/static/js/653.1989b35f.chunk.js",
+    "static/js/295.acaf4fca.chunk.js": "/redramka/static/js/295.acaf4fca.chunk.js",
     "index.html": "/redramka/index.html",
     "main.2d2c9333.css.map": "/redramka/static/css/main.2d2c9333.css.map",
-    "main.28ac5548.js.map": "/redramka/static/js/main.28ac5548.js.map",
-    "114.a8ecd98e.chunk.css.map": "/redramka/static/css/114.a8ecd98e.chunk.css.map",
-    "114.617a5a25.chunk.js.map": "/redramka/static/js/114.617a5a25.chunk.js.map",
-    "202.624fe959.chunk.css.map": "/redramka/static/css/202.624fe959.chunk.css.map",
-    "202.dc577560.chunk.js.map": "/redramka/static/js/202.dc577560.chunk.js.map"
+    "main.9f64e65d.js.map": "/redramka/static/js/main.9f64e65d.js.map",
+    "727.6b77a8af.chunk.js.map": "/redramka/static/js/727.6b77a8af.chunk.js.map",
+    "816.2624e79f.chunk.css.map": "/redramka/static/css/816.2624e79f.chunk.css.map",
+    "816.33e1182d.chunk.js.map": "/redramka/static/js/816.33e1182d.chunk.js.map",
+    "653.b5e55eff.chunk.css.map": "/redramka/static/css/653.b5e55eff.chunk.css.map",
+    "653.1989b35f.chunk.js.map": "/redramka/static/js/653.1989b35f.chunk.js.map",
+    "295.acaf4fca.chunk.js.map": "/redramka/static/js/295.acaf4fca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2d2c9333.css",
-    "static/js/main.28ac5548.js"
+    "static/js/main.9f64e65d.js"
   ]
 }
