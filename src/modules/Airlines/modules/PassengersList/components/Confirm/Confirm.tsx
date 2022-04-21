@@ -1,5 +1,6 @@
-import React from 'react';
 import './Confirm.scss';
+
+import React from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {useTypeSelector} from '../../../../../Core/hooks/useTypeSelector';
 import {useAction} from '../../../../../Core/hooks/useAction';

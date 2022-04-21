@@ -17,7 +17,6 @@ const MainLayout: React.FC = () => (
         </Suspense>
       }
     />
-    {/* TODO Допилить страницу NotFoundPage  */}
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );
