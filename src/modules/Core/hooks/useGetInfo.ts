@@ -15,7 +15,7 @@ export function useGetInfo(id: any) {
     await axios
       .get(`https://api.instantwebtools.net/v1/passenger/${id}`)
       .then(({data}) => {
-        data ? setCard(data.airline[0]) : navigate('/');
+        data ? setCard(data.airline[0]) : navigate('/redramka');
       })
       .catch((error) => {
         console.log(error);
