@@ -6,6 +6,7 @@ import {useTypeSelector} from '../../../Core/hooks/useTypeSelector';
 import axios from 'axios';
 import {IAirline} from '../../../Core/models/Airline';
 import {CSSTransition} from 'react-transition-group';
+import {useGetInfo} from '../../../Core/hooks/useGetInfo';
 
 /**
  * Карточка авиалинни
@@ -13,24 +14,9 @@ import {CSSTransition} from 'react-transition-group';
 const AirLineCard: React.FC = () => {
   const {cards, activeCard} = useTypeSelector((state) => state.cards);
   const navigate = useNavigate();
-  const [card, setCard] = useState<IAirline>({} as IAirline);
   const {setIsConfirm} = useAction();
   const {id} = useParams();
-
-  useEffect(() => {
-    if (!activeCard) {
-      axios
-        .get(`https://api.instantwebtools.net/v1/passenger/${id}`)
-        .then(({data}) => {
-          data ? setCard(data.airline[0]) : navigate('/');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      setCard(activeCard.airline[0]);
-    }
-  }, []);
+  const [card] = useGetInfo(id);
 
   const handelClouse = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement;

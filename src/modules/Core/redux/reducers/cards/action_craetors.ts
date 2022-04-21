@@ -43,7 +43,7 @@ export const CardsActionCreators = {
     await axios
       .get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=${limit}`)
       .then(({data}: AxiosResponse<IResponse<IPassengers>>) => {
-        dispatch(CardsActionCreators.setIsError(false));
+        // dispatch(CardsActionCreators.setIsError(false));
         dispatch(CardsActionCreators.setTotalPassengers(data.totalPassengers));
         dispatch(CardsActionCreators.setCards(data.data));
         dispatch(CardsActionCreators.setPage());
