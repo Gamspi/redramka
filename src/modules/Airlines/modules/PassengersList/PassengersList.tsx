@@ -41,9 +41,7 @@ const PassengersList: React.FC = () => {
           ))}
         </TransitionGroup>
       </div>
-
-        <Outlet />
-
+      <Outlet />
     </div>
   );
 };

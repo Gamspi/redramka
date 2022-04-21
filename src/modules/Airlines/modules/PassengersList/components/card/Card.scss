@@ -14,7 +14,7 @@
     @include align-items(start);
     @include justify-content(space-between);
     @include background(space-between);
-    @include text-shadow(-2px, -2px, 4px, #545a64, 3px, 3px, 1px, #ffffff);
+    @include text-shadow(-2px, -2px, 4px, #545a64, 2px, 2px, 2px, #ffffff);
     @include border-radius(20px);
     @include box-shadow(-8px -8px 20px #748394, 10px 7px 20px #ffffff);
 
