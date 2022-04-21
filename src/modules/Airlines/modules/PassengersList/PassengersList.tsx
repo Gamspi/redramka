@@ -34,21 +34,17 @@ const PassengersList: React.FC = () => {
         <TransitionGroup component="ul">
           {cards.map((element) => (
             <CSSTransition timeout={500} key={element._id} classNames="item">
-              <li
-                className="item"
-                onClick={()=> setActivCard(element)}
-              >
+              <li className="item" onClick={() => setActivCard(element)}>
                 <Card id={element._id} trips={element.trips} name={element.name} />
               </li>
             </CSSTransition>
           ))}
         </TransitionGroup>
       </div>
-        <CSSTransition timeout={500} classNames="info" in={!!id}>
+      <CSSTransition timeout={500} classNames="info" in={!!id}>
         <Outlet />
-    </CSSTransition>
-
-</div>
+      </CSSTransition>
+    </div>
   );
 };
 export default React.memo(PassengersList);

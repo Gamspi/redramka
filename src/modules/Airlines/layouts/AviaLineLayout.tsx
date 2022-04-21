@@ -5,7 +5,6 @@ import AirLineCard from '../modules/AirLineCard/AirLineCard';
 
 const PassengersList = React.lazy(() => import('../modules/PassengersList/PassengersList'));
 
-
 /**
  * Слой роутинга для модуля Airline
  */
@@ -21,13 +20,7 @@ const AviaLineLayout: React.FC = () => {
           </Suspense>
         }
       >
-        <Route
-          path="card/:id"
-          element={
-              <AirLineCard />
-          }
-        />
-
+        <Route path="card/:id" element={<AirLineCard />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
