@@ -8,7 +8,7 @@ const initialState: cardsState = {
     isSuccess: false,
 
     totalPassengers: 1,
-    page: 0,
+    page: 1,
 
     activeCard: null,
     cards: [] as Array<IPassengers>,

@@ -15,6 +15,7 @@ import {appDispatch} from '../../store';
 import axios, {AxiosResponse} from 'axios';
 import {limit} from '../../../constants/limit';
 import {IPassengers, IResponse} from '../../../models/Airline';
+import PasengerService from '../../../api/pasengerService';
 
 export const CardsActionCreators = {
   setActivCard: (id: IPassengers): setActiveCardAction => ({type: AuthActionEnum.SET_ACTIVE_CARD, payload: id}),
@@ -40,10 +41,9 @@ export const CardsActionCreators = {
 
   downloadCards: (page: number) => async (dispatch: appDispatch) => {
     dispatch(CardsActionCreators.setIsLoading(true));
-    await axios
-      .get(`https://api.instantwebtools.net/v1/passenger?page=${page}&size=${limit}`)
+    PasengerService.getPasenger(page,limit)
       .then(({data}: AxiosResponse<IResponse<IPassengers>>) => {
-        // dispatch(CardsActionCreators.setIsError(false));
+        // dispatch(CardsActionCreators.setIsError(false)s);
         dispatch(CardsActionCreators.setTotalPassengers(data.totalPassengers));
         dispatch(CardsActionCreators.setCards(data.data));
         dispatch(CardsActionCreators.setPage());
@@ -58,8 +58,7 @@ export const CardsActionCreators = {
   },
   deleteCardFunction: (id: string) => async (dispatch: appDispatch) => {
     dispatch(CardsActionCreators.setIsSuccess(false));
-    await axios
-      .delete(`https://api.instantwebtools.net/v1/passenger/${id}`)
+    PasengerService.deletePasenger(id)
       .then(() => {
         dispatch(CardsActionCreators.deleteCard(id));
       })
